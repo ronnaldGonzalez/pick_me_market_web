@@ -1,0 +1,40 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    /* Cambia el color de fondo según tus necesidades */
+    color: white;
+    padding: 10px 20px;
+    /* Ajusta el padding según tus necesidades */
+    z-index: 1000;
+    /* Asegúrate de que el navbar esté por encima del contenido */
+    box-sizing: border-box;
+    /* Incluye el padding en el ancho total */
+}
+
+/* Estilo para el contenido del navbar */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.navbar a.active {
+    background-color: #575757;
+    /* Cambia el color de fondo cuando el enlace está activo */
+}

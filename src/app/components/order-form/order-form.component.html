@@ -1,0 +1,61 @@
+<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+        <!-- Sección de Información del Vehículo -->
+        <div class="vehicle-info">
+            <h2>Información del Vehículo</h2>
+            <label for="patente">Patente</label>
+            <input id="patente" formControlName="patente" type="text" required>
+            <label for="marca">Marca</label>
+            <input id="marca" formControlName="marca" type="text" required>
+            <label for="modelo">Modelo</label>
+            <input id="modelo" formControlName="modelo" type="text" required>
+            <label for="año">Año</label>
+            <input id="año" formControlName="año" type="text" required>
+            <label for="vin">VIN</label>
+            <input id="vin" formControlName="vin" type="text" required>
+        </div>
+        <!-- Sección de Repuestos -->
+        <div class="repuestos-form">
+            <h2>Agregar Repuesto</h2>
+            <div formGroupName="repuestoForm">
+                <label for="categoria">Categoría</label>
+                <select formControlName="categoria" id="categoria" required>
+                    <option value="">Selecciona categoría</option>
+                    <option value="motor">Motor</option>
+                    <option value="frenos">Frenos</option>
+                    <!-- Agrega más categorías según sea necesario -->
+                </select> <label for="subcategoria">Subcategoría</label>
+                <select formControlName="subcategoria" id="subcategoria" required>
+                    <option value="">Selecciona subcategoría</option>
+                    <option value="aceite">Aceite</option>
+                    <option value="pastillas">Pastillas de freno</option>
+                    <!-- Agrega más subcategorías según sea necesario -->
+                </select>
+                <label for="nombreRepuesto">Nombre del Repuesto</label>
+                <input formControlName="nombreRepuesto" id="nombreRepuesto" type="text" required>
+                <label for="foto">Foto</label>
+                <input type="file" (change)="onFileChange($event)" required>
+                <button type="button" (click)="addRepuesto()">Añadir otro repuesto</button>
+            </div>
+            <!-- Lista de Repuestos Añadidos -->
+            <div class="repuestos-list">
+                <h2>Repuestos Añadidos</h2>
+                <div *ngFor="let repuesto of repuestosList; let i=index" class="repuesto-item">
+                    <div class="repuesto-item">
+                        <div class="repuesto-info">
+                            <p><strong>Categoría:</strong> {{ repuesto.categoria }}</p>
+                            <p><strong>Subcategoría:</strong> {{ repuesto.subcategoria }}</p>
+                            <p><strong>Nombre del Repuesto:</strong> {{ repuesto.nombreRepuesto }}</p>
+                        </div>
+                        <div class="repuesto-actions">
+                            <p><strong>Foto:</strong></p> <img [src]="repuesto.fotoUrl" alt="Foto del Repuesto"
+                                class="repuesto-img"> <button type="button"
+                                (click)="removeRepuesto(i)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit">Enviar Orden</button>
+</form>

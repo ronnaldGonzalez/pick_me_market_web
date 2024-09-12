@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  isLoginModalOpen: boolean = false;
+  openLoginModal() {
+    this.isLoginModalOpen = true;
+  }
+  closeLoginModal() {
+    this.isLoginModalOpen = false;
+  }
 }
+
+

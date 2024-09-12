@@ -3,30 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CustomerInfoComponent } from './customer-info/customer-info.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
-import { ProductOffersComponent } from './product-offers/product-offers.component';
-import { PaymentComponent } from './payment/payment.component';
-import { OrderValidationComponent } from './order-validation/order-validation.component';
-import { ProductControversyComponent } from './product-controversy/product-controversy.component';
-import { HomeComponent } from './home/home.component';
-
+import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { ProductOffersComponent } from './components/product-offers/product-offers.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { OrderValidationComponent } from './components/order-validation/order-validation.component';
+import { ProductControversyComponent } from './components/product-controversy/product-controversy.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PrivateSiteComponent } from './components/private-site/private-site.component';
+import { OrderFormComponent } from './components/order-form/order-form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     CustomerInfoComponent,
     OrderDetailsComponent,
     ProductOffersComponent,
     PaymentComponent,
     OrderValidationComponent,
     ProductControversyComponent,
-    HomeComponent
+    HomeComponent,
+    LoginModalComponent,
+    NavbarComponent,
+    PrivateSiteComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

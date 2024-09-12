@@ -1,0 +1,224 @@
+/* Estilo general del formulario */
+.form-container {
+    display: flex;
+    flex-direction: row;
+    /* Disposición en fila */
+    gap: 20px;
+    /* Espacio entre las dos columnas */
+}
+
+/* Estilo para la sección de información del vehículo */
+.vehicle-info {
+    flex: 1;
+    /* Ocupa el espacio disponible */
+    border-right: 2px solid #ddd;
+    /* Línea divisoria a la derecha */
+    padding: 20px;
+    /* Espacio interno */
+    background-color: #f9f9f9;
+    /* Color de fondo suave */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.vehicle-info label {
+    display: block;
+    /* Asegura que cada etiqueta esté en su propia línea */
+    margin-bottom: 5px;
+    /* Espacio debajo de las etiquetas */
+    font-weight: bold;
+    /* Texto en negrita */
+    color: #333;
+    /* Color del texto de las etiquetas */
+}
+
+.vehicle-info input,
+.vehicle-info select {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    /* Espacio interno en los campos de entrada */
+    margin-bottom: 15px;
+    /* Espacio entre los campos */
+    border: 1px solid #ccc;
+    /* Borde suave */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    box-sizing: border-box;
+    /* Incluye el padding y border en el width */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+}
+
+.vehicle-info input:focus,
+.vehicle-info select:focus {
+    border-color: #007bff;
+    /* Cambio de color del borde en el enfoque */
+    outline: none;
+    /* Eliminar el borde de enfoque predeterminado */
+}
+
+/* Estilo para la sección de repuestos */
+.repuestos-form {
+    flex: 2;
+    /* Ocupa más espacio que la sección de información del vehículo */
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* Color de fondo suave */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.repuestos-form h2 {
+    margin-top: 0;
+    /* Eliminar margen superior del título */
+}
+
+.repuestos-form label {
+    display: block;
+    /* Asegura que las etiquetas estén en su propia línea */
+    margin-bottom: 5px;
+    /* Espacio debajo de las etiquetas */
+    font-weight: bold;
+    /* Texto en negrita */
+    color: #333;
+    /* Color del texto de las etiquetas */
+}
+
+.repuestos-form input,
+.repuestos-form select {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    /* Espacio interno en los campos de entrada */
+    margin-bottom: 15px;
+    /* Espacio entre los campos */
+    border: 1px solid #ccc;
+    /* Borde suave */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    box-sizing: border-box;
+    /* Incluye el padding y border en el width */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+}
+
+.repuestos-form input:focus,
+.repuestos-form select:focus {
+    border-color: #007bff;
+    /* Cambio de color del borde en el enfoque */
+    outline: none;
+    /* Eliminar el borde de enfoque predeterminado */
+}
+
+.repuestos-form button {
+    padding: 10px 20px;
+    /* Espacio interno del botón */
+    background-color: #007bff;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto del botón */
+    border: none;
+    /* Eliminar el borde del botón */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambiar cursor al pasar sobre el botón */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+}
+
+.repuestos-form button:hover {
+    background-color: #0056b3;
+    /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilo para la lista de repuestos añadidos */
+.repuestos-list {
+    max-width: 700px;
+    margin-top: 20px;
+    /* Espacio superior para separar de la sección de entrada */
+    max-height: 300px;
+    /* Altura máxima antes de hacer scroll */
+    overflow-y: auto;
+    /* Hacer scroll vertical si es necesario */
+    overflow-x: hidden;
+    /* Ocultar el scroll horizontal */
+    display: flex;
+    /* Mostrar los ítems en una columna */
+    flex-direction: column;
+    /* Dirección de los ítems en columna */
+    gap: 10px;
+    /* Espacio entre los ítems */
+}
+
+/* Estilo para cada ítem de repuesto */
+.repuesto-item {
+    border: 1px solid #ddd;
+    /* Borde alrededor del ítem */
+    padding: 10px;
+    /* Espacio interno */
+    background-color: #fff;
+    /* Fondo blanco */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    display: flex;
+    /* Mostrar el contenido en fila dentro del ítem */
+    justify-content: space-between;
+    /* Espacio entre los dos paneles */
+    align-items: center;
+    /* Alinear elementos verticalmente al centro */
+    box-sizing: border-box;
+    /* Incluye el padding y border en el width */
+    max-width: 100%;
+    /* Asegura que el ítem no se expanda más allá de su contenedor */
+    width: 100%;
+    /* Asegura que el ítem ocupe todo el ancho disponible del contenedor */
+}
+
+/* Panel de información dentro del ítem de repuesto */
+.repuesto-info {
+    flex: 1;
+    /* Ocupa el espacio disponible */
+    overflow: hidden;
+    /* Ocultar cualquier contenido que se desborde */
+    max-width: calc(100% - 150px);
+    /* Asegura que el contenido no se desborde al lado de la foto y el botón */
+    padding-right: 10px;
+    /* Espacio a la derecha del panel de información */
+}
+
+/* Panel de acciones dentro del ítem de repuesto */
+.repuesto-actions {
+    display: flex;
+    /* Mostrar elementos en fila dentro del panel de acciones */
+    flex-direction: column;
+    /* Dirección de los elementos en columna */
+    align-items: center;
+    /* Centrar los elementos horizontalmente */
+    text-align: center;
+    /* Alinear el texto al centro */
+}
+
+/* Imagen del repuesto */
+.repuesto-img {
+    max-width: 100px;
+    /* Tamaño máximo de la imagen */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    margin-bottom: 10px;
+    /* Espacio debajo de la imagen */
+}
+
+.repuesto-actions button {
+    margin-top: 10px;
+    /* Espacio superior del botón */
+}
+
+/* Ajuste para asegurar que el contenido no se desborde */
+.repuesto-item {
+    box-sizing: border-box;
+    /* Incluye el padding y border en el width */
+}

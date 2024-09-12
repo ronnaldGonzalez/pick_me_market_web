@@ -4,22 +4,27 @@
         <p>Tu proveedor confiable de repuestos automotrices de alta calidad.</p>
     </header>
     <section class="features">
-        <div class="feature"> <img src="assets/icons/quality.jpeg" alt="Calidad">
+        <div class="feature"> 
+            <img src="assets/icons/quality.jpeg" alt="Calidad">
             <h2>Calidad Garantizada</h2>
             <p>Repuestos originales y certificados para asegurar el mejor rendimiento de tu vehículo.</p>
         </div>
-        <div class="feature"> <img src="assets/icons/fast.png" alt="Entrega Rápida">
+        <div class="feature"> 
+            <img src="assets/icons/fast.png" alt="Entrega Rápida">
             <h2>Entrega Rápida</h2>
             <p>Recibe tus repuestos en tiempo récord con nuestro servicio de entrega eficiente.</p>
         </div>
-        <div class="feature"> <img src="assets/icons/support.png" alt="Soporte Técnico">
+        <div class="feature"> 
+            <img src="assets/icons/support.png" alt="Soporte Técnico">
             <h2>Soporte Técnico</h2>
             <p>Asistencia experta para ayudarte a encontrar el repuesto adecuado para tu vehículo.</p>
         </div>
     </section>
     <section class="cta">
         <h2>¿Listo para comprar?</h2>
-        <p>Explora nuestro catálogo y encuentra lo que necesitas para tu vehículo.</p> <a routerLink="/about"
-            class="cta-button">Conoce Más</a> <a routerLink="/login" class="cta-button">Iniciar Sesión</a>
+        <p>Explora nuestro catálogo y encuentra lo que necesitas para tu vehículo.</p>
+         <a routerLink="/about" class="cta-button">Conoce Más</a> 
+         <a (click)="openLoginModal()" class="cta-button">Iniciar Sesión</a>
+        <app-login-modal *ngIf="isLoginModalOpen" (close)="closeLoginModal()"></app-login-modal> 
     </section>
 </div>
