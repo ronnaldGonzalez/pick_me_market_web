@@ -1,0 +1,16 @@
+<div class="repuestos-list">
+    <h2>Repuestos Añadidos</h2>
+    <div *ngFor="let repuesto of listaRepuestos; let i = index" class="repuesto-item">
+        <div class="repuesto-info">
+            <p><strong>Categoría:</strong> {{ repuesto.categoria }}</p>
+            <p><strong>Subcategoría:</strong> {{ repuesto.subcategoria }}</p>
+            <p><strong>Nombre del Repuesto:</strong> {{ repuesto.nombreRepuesto }}</p>
+        </div>
+        <div class="repuesto-actions">
+            <p><strong>Foto:</strong></p>
+            <img [src]="repuesto.foto" alt="Foto del Repuesto" class="repuesto-img">
+            <button *ngIf="!isViewMode" type="button" (click)="removeRepuesto(i)">Eliminar</button>
+            <button *ngIf="isViewMode" (click)="onVerOferta(repuesto)">Ver oferta</button>
+        </div>
+    </div>
+</div>

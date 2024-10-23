@@ -1,0 +1,6 @@
+<div class="order-form-container">
+    <app-vehicle-info class="vehicle-info" (formSubmitted)="guardarInfoVehiculo($event)"></app-vehicle-info>
+    <app-repuestos-form class="repuestos-form" (repuestoAdded)="onRepuestoAdded($event)" (enviarOden)="enviarOrden()"></app-repuestos-form>
+    <app-repuestos-list [listaRepuestos]="listaRepuestos" class="repuestos-list"></app-repuestos-list>
+  </div>
+  

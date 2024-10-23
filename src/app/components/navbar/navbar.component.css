@@ -1,40 +1,66 @@
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    /* Cambia el color de fondo según tus necesidades */
+header.navbar {
+    background-color: #1B98E0;
     color: white;
-    padding: 10px 20px;
-    /* Ajusta el padding según tus necesidades */
-    z-index: 1000;
-    /* Asegúrate de que el navbar esté por encima del contenido */
-    box-sizing: border-box;
-    /* Incluye el padding en el ancho total */
-}
-
-/* Estilo para el contenido del navbar */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding: 1rem;
     display: flex;
-    justify-content: space-around;
-}
-
-.navbar li {
-    display: inline;
-}
-
-.navbar a {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .brand {
+    font-size: 1.5rem;
+  }
+  
+  .navbar .menu-toggle {
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar-links ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-links ul li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    display: block;
-}
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-links ul li a.active {
+    background-color: #555;
+    border-radius: 5px;
+  }
 
-.navbar a.active {
-    background-color: #575757;
-    /* Cambia el color de fondo cuando el enlace está activo */
-}
+  @media (max-width: 768px) {
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .navbar .menu-toggle {
+      display: block;
+    }
+  
+    .navbar-links ul {
+      flex-direction: column;
+    }
+  
+    .navbar-links ul li {
+      margin: 10px 0;
+    }
+  }

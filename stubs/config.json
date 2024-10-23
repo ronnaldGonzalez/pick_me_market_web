@@ -1,0 +1,22 @@
+[
+  {
+    "request": {
+      "url": "^/orden",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "file": "./addOrden.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/orden",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "file": "./ordenById.json"
+    }
+  }
+]

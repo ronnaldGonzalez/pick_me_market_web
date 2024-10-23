@@ -1,42 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
-import { OrderDetailsComponent } from './components/order-details/order-details.component';
-import { ProductOffersComponent } from './components/product-offers/product-offers.component';
-import { PaymentComponent } from './components/payment/payment.component';
-import { OrderValidationComponent } from './components/order-validation/order-validation.component';
-import { ProductControversyComponent } from './components/product-controversy/product-controversy.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { PrivateSiteComponent } from './components/private-site/private-site.component';
-import { OrderFormComponent } from './components/order-form/order-form.component';
+import { PrivateSiteComponent } from './pages/private-site/private-site.component';
+import { VehicleInfoComponent } from './components/vehicle-info/vehicle-info.component';
+import { RepuestosFormComponent } from './components/repuestos-form/repuestos-form.component';
+import { RepuestosListComponent } from './components/repuestos-list/repuestos-list.component';
+import { OrdenComponent } from './pages/orden/orden.component';
+import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
+import { ApiService } from './services/api.service';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerInfoComponent,
-    OrderDetailsComponent,
-    ProductOffersComponent,
-    PaymentComponent,
-    OrderValidationComponent,
-    ProductControversyComponent,
     HomeComponent,
     LoginModalComponent,
     NavbarComponent,
     PrivateSiteComponent,
-    OrderFormComponent
+    VehicleInfoComponent,
+    RepuestosFormComponent,
+    RepuestosListComponent,
+    OrdenComponent,
+    NavigationLayoutComponentComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,19 @@
-<nav class="navbar">
-    <ul>
-        <li>
-            <a routerLink="orderForm" routerLinkActive="active">Crear Orden</a>
-        </li>
-        <li>
-            <a (click)="logout()">Logout</a>
-        </li>
-    </ul>
-</nav>
+<header class="navbar">
+    <div class="brand">Pickmemarket</div>
+    <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
+    <nav [class.active]="isMenuOpen" class="navbar-links">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
+        <li><a routerLink="/create-order" routerLinkActive="active">Crear Orden</a></li>
+        <li><a routerLink="/orders" routerLinkActive="active">Mis Órdenes</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active">Perfil</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <form (submit)="onSearch()">
+        <input type="text" [(ngModel)]="orderNumber" placeholder="Número de Orden" name="orderNumber" required>
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </header>

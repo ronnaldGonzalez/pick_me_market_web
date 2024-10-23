@@ -1,0 +1,137 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f4f4f4;
+    /* Fondo claro para contraste */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Estilo del encabezado */
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333;
+    /* Color oscuro para el texto */
+    font-family: 'Arial', sans-serif;
+    /* Fuente clara y legible */
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+    /* Color gris para el texto secundario */
+    margin-top: 10px;
+    max-width: 700px;
+    /* Ancho máximo para el párrafo */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo de las secciones de características */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.feature {
+    background: #fff;
+    /* Fondo blanco para cada característica */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    padding: 20px;
+    width: 280px;
+    margin: 10px;
+    text-align: center;
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Estilo de la sección de llamada a la acción */
+.cta {
+    margin-top: 40px;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    /* Color de fondo azul */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    /* Transición suave */
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    /* Azul más oscuro al pasar el ratón */
+}
+
+/* buscador */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra el buscador */
+    margin: 20px 0; /* Espacio alrededor del buscador */
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px; /* Ancho del input */
+}
+
+.search-button {
+    padding: 10px 15px;
+    background-color: #28a745; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px; /* Espacio entre el input y el botón */
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #218838; /* Color del botón al pasar el mouse */
+}

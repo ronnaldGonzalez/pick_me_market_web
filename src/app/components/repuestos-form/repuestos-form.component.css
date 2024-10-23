@@ -1,0 +1,100 @@
+/* Estilo para la sección de repuestos */
+.repuestos-form {
+    flex: 2;
+    padding: 20px;
+    background-color: #F0F0F0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.repuestos-form h2 {
+    margin-top: 0;
+}
+
+.repuestos-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.repuestos-form input,
+.repuestos-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+}
+
+.repuestos-form input:focus,
+.repuestos-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botón "Añadir otro repuesto" */
+.repuestos-form button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.repuestos-form button:hover {
+    background-color: #0056b3;
+}
+
+/* .repuestos-form {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+.repuestos-form h2 {
+    margin-top: 0;
+}
+
+.repuestos-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.repuestos-form input,
+.repuestos-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.repuestos-form input:focus,
+.repuestos-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.repuestos-form button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.repuestos-form button:hover {
+    background-color: #0056b3;
+} */

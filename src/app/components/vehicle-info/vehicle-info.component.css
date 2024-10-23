@@ -1,0 +1,89 @@
+/* Estilo para la sección de información del vehículo */
+.vehicle-info {
+    flex: 1;
+    border-right: 2px solid #ddd;
+    padding: 20px;
+    background-color: #F0F0F0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-info label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.vehicle-info input,
+.vehicle-info select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+}
+
+.vehicle-info input:focus,
+.vehicle-info select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* .vehicle-info {
+    text-align: left;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vehicle-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .vehicle-info label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .vehicle-info input,
+  .vehicle-info select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .vehicle-info input[type="number"]::-webkit-inner-spin-button,
+  .vehicle-info input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .vehicle-info input:focus,
+  .vehicle-info select:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .error-messages {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  small {
+    color: red;
+  }
+   */
