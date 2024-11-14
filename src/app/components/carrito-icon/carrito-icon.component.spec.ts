@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrivateSiteComponent } from './private-site.component';
+import { CarritoIconComponent } from './carrito-icon.component';
 
-describe('PrivateSiteComponent', () => {
-  let component: PrivateSiteComponent;
-  let fixture: ComponentFixture<PrivateSiteComponent>;
+describe('CarritoIconComponent', () => {
+  let component: CarritoIconComponent;
+  let fixture: ComponentFixture<CarritoIconComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrivateSiteComponent ]
+      declarations: [ CarritoIconComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PrivateSiteComponent);
+    fixture = TestBed.createComponent(CarritoIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

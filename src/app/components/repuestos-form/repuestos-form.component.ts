@@ -1,7 +1,7 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import repuestosJson from '../../../assets/json/repuestos.json'; // JSON con las categorías y subcategorías
-import { Categoria, CategoriasResponse } from '../../../assets/interfaces/repuestos.model';
+import { Categoria, CategoriasResponse, Repuesto } from '../../../assets/interfaces';
 
 @Component({
   selector: 'app-repuestos-form',
@@ -12,25 +12,25 @@ export class RepuestosFormComponent implements OnInit {
   repuestoForm!: FormGroup; // Asegúrate de que es el nombre correcto del FormGroup
   categorias: Categoria[] = [];
   subcategorias: string[] = [];
-  listaRepuestos: any[] = [];
-  @Output() repuestoAdded = new EventEmitter<any>();
-  @Output() enviarOden = new EventEmitter<any[]>();
+  listaRepuestos: Repuesto[] = [];
+  isSubmitButtonDisabled: boolean = true;
+  @Output() repuestoAdded = new EventEmitter<Repuesto>();
+  @Output() enviarOrden = new EventEmitter<any[]>();
+  @Input() disableButtonSubmit: boolean = false;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.cargarCategorias();
-
-    // Definimos el formGroup para repuestoForm
+    
     this.repuestoForm = this.fb.group({
       categoria: ['', Validators.required],
       subcategoria: ['', Validators.required],
       nombreRepuesto: ['', Validators.required],
-      foto: ['', Validators.required]
+      foto: ['']
     });
   }
 
   cargarCategorias() {
-    console.log('cargando categorias')
     this.categorias = (repuestosJson as CategoriasResponse).Segmentación;
   }
 
@@ -42,30 +42,26 @@ export class RepuestosFormComponent implements OnInit {
   }
 
   agregarRepuesto() {
-    const nuevoRepuesto = {
-      categoria: this.repuestoForm.get('categoria')?.value,
-      subcategoria: this.repuestoForm.get('subcategoria')?.value,
-      nombreRepuesto: this.repuestoForm.get('nombreRepuesto')?.value,
-      foto: this.repuestoForm.get('foto')?.value
-    };
-    this.listaRepuestos.push(nuevoRepuesto);
-    this.repuestoAdded.emit(nuevoRepuesto); 
-    this.repuestoForm.reset(); // Limpia el formulario
-  }
+    if(this.repuestoForm.valid){
+      const nuevoRepuesto: Repuesto = {
+        categoria: this.repuestoForm.get('categoria')?.value,
+        subcategoria: this.repuestoForm.get('subcategoria')?.value,
+        nombreRepuesto: this.repuestoForm.get('nombreRepuesto')?.value,
+        foto: this.repuestoForm.get('foto')?.value
+      };
+      this.listaRepuestos.push(nuevoRepuesto);
+      this.repuestoAdded.emit(nuevoRepuesto); 
+      this.isSubmitButtonDisabled = false;
+      console.log('addrepuesto')
+      this.repuestoForm.reset(); // Limpia el formulario
+  
+      const fileInput = document.getElementById('file') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = ''; // Limpiar el valor del campo file
+      }
 
-  // onFileChange(event: Event): void {
-  //   // bajar peso de fotos
-  //   const input = event.target as HTMLInputElement;
-  //   if (input.files && input.files[0]) {
-  //     const file = input.files[0];
-  //     const reader = new FileReader();
-  //     reader.onload = () => {
-  //       const photoUrl = reader.result as string;
-  //       this.repuestoForm.get('foto')?.setValue(photoUrl);
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // }
+    }
+    }
 
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -114,12 +110,8 @@ export class RepuestosFormComponent implements OnInit {
 
   onSubmit(){
     if(this.listaRepuestos.length > 0 ){
-      console.log('enviando formulario');
-      this.enviarOden.emit();
-    }else{
-      console.log('formulario vacio')
+      this.enviarOrden.emit();
     }
-    
   }
 
   get categoria() {

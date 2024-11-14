@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Repuesto } from 'src/assets/interfaces/repuesto.interface';
 
 @Component({
   selector: 'app-repuestos-list',
@@ -6,19 +7,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./repuestos-list.component.css']
 })
 export class RepuestosListComponent {
-  @Input() listaRepuestos: Array<{
-    categoria: string;
-    subcategoria: string;
-    nombreRepuesto: string;
-    foto: string;
-  }> = [];
-
+  @Input() listaRepuestos: Array<Repuesto> | undefined= [];
+  selectedRepuestoId: number | undefined | null = null;
   @Input() isViewMode: boolean = false;
 
   removeRepuesto(index: number): void {
-    this.listaRepuestos.splice(index, 1);
+    this.listaRepuestos?.splice(index, 1);
   }
-  onVerOferta(repuesto: any){
-    console.log(repuesto)
+  onVerOferta(repuesto: Repuesto){
+    this.selectedRepuestoId = repuesto.idProducto;
+  }
+
+  cerrarOfertas() {
+    this.selectedRepuestoId = null;
   }
 }

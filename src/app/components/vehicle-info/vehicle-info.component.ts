@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import marcasJson from '../../../assets/json/marcasVehiculos.json';
 import { MarcasResponse } from '../../../assets/interfaces/vehiculos.model';
+import { SolicitudData,Marca } from 'src/assets/interfaces';
 
 @Component({
   selector: 'app-vehicle-info',
@@ -9,11 +10,11 @@ import { MarcasResponse } from '../../../assets/interfaces/vehiculos.model';
   styleUrls: ['./vehicle-info.component.css']
 })
 export class VehicleInfoComponent implements OnInit {
-  @Input() vehicleData: any;  // Datos para visualización
+  @Input() vehicleData: SolicitudData | undefined;  // Datos para visualización
   @Input() isEditMode = true; // Controla si el formulario está en modo de edición
   @Output() formSubmitted = new EventEmitter<any>();
   vehicleForm!: FormGroup;
-  marcas: any[] = [];
+  marcas: Marca[] = [];
   modelos: string[] = [];
 
   constructor(private fb: FormBuilder) { }
@@ -30,13 +31,13 @@ export class VehicleInfoComponent implements OnInit {
       marca: [{ value: '', disabled: !this.isEditMode }, Validators.required],
       modelo: [{ value: '', disabled: !this.isEditMode }, Validators.required],
       año: [{ value: '', disabled: !this.isEditMode }, [Validators.required, Validators.pattern(/^(19|20)\d{2}$/)]],
-      vin: [{ value: '', disabled: !this.isEditMode }, [Validators.required, Validators.pattern(/^[A-HJ-NPR-Z0-9]{15,17}$/)]]
+      vin: [{ value: '', disabled: !this.isEditMode }, [Validators.required, Validators.pattern(/^[A-HJ-NPR-Za-hj-npr-z0-9]{15,17}$/)]]
     });
 
     
     // Si hay datos de visualización, populamos el formulario
     if (this.vehicleData) {
-      const selectedMarca = this.marcas.find(marca => marca.id === Number(this.vehicleData.marca));
+      const selectedMarca = this.marcas.find(marca => marca.id === Number(this.vehicleData?.marca));
       this.modelos = selectedMarca ? selectedMarca.modelos : [];
       this.vehicleForm.patchValue(this.vehicleData);
     }
@@ -55,9 +56,7 @@ export class VehicleInfoComponent implements OnInit {
   }
 
   enviarDatos() {
-    console.log('en enviar datos')
     if (this.vehicleForm.valid) {
-      console.log('datos validos')
       this.formSubmitted.emit(this.vehicleForm.value); // Emitir los datos al componente padre
     }
   }

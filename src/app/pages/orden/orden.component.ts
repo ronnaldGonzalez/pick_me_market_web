@@ -8,6 +8,7 @@ import { ApiService } from '../../services/api.service';
 export class OrdenComponent {
   listaRepuestos: any[] = [];
   vehicleInfoData: any = {};
+  disableButtonSubmit= true;
 
   constructor( private apiService: ApiService ){}
 
@@ -17,6 +18,7 @@ export class OrdenComponent {
 
   guardarInfoVehiculo(data: any) {
     this.vehicleInfoData = data; // Guardar la información de VehicleInfo
+    this.disableButtonSubmit = false;
   }
 
   enviarOrden() {

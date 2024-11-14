@@ -15,6 +15,9 @@ import { OrdenComponent } from './pages/orden/orden.component';
 import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
 import { ApiService } from './services/api.service';
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { MenuOfertaComponent} from './components/menu-oferta/menu-oferta.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,10 @@ import { OrderDetailComponent } from './pages/order-detail/order-detail.componen
     RepuestosListComponent,
     OrdenComponent,
     NavigationLayoutComponentComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    MenuOfertaComponent,
+    CarritoComponent,
+    CarritoIconComponent
   ],
   imports: [
     BrowserModule,

@@ -23,11 +23,11 @@
       <input formControlName="nombreRepuesto" id="nombreRepuesto" type="text" required>
 
       <label for="foto">Foto</label>
-      <input type="file" (change)="onFileChange($event)" required>
+      <input id="file" type="file" (change)="onFileChange($event)">
 
       <div class="buttons-container">
-          <button type="button" (click)="agregarRepuesto()">Añadir otro repuesto</button>
-          <button type="submit" class="submit-button">Enviar Orden</button>
+          <button type="button" (click)="agregarRepuesto()" [disabled]="repuestoForm.invalid">Añadir otro repuesto</button>
+          <button type="submit" class="submit-button"  id="submit-button" [disabled]="this.isSubmitButtonDisabled || this.disableButtonSubmit" >Enviar Orden</button>
       </div>
   </form>
 </div>

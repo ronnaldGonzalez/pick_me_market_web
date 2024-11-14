@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "3f7eb8d6-8d7e-4da9-8383-ecc13dce1d6a",
+		"name": "PickMeMarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39212406"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "pickme-login-manager",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:9001/api/login/v1/login",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"login",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pickme-product-manager",
+					"item": [
+						{
+							"name": "Put product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:9001/api/product/v1/product",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"product",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put product Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9001/api/product/v1/product",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"product",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Production",
+			"item": [
+				{
+					"name": "pickme-login-manager",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://pickme-users-manager.vercel.app/api/login/v1/login",
+									"protocol": "https",
+									"host": [
+										"pickme-users-manager",
+										"vercel",
+										"app"
+									],
+									"path": [
+										"api",
+										"login",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pickme-product-manager",
+					"item": [
+						{
+							"name": "Put product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "pickme-product-manager.vercel.app/api/product/v1/product",
+									"host": [
+										"pickme-product-manager",
+										"vercel",
+										"app"
+									],
+									"path": [
+										"api",
+										"product",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put product Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "pickme-product-manager.vercel.app/api/product/v1/product",
+									"host": [
+										"pickme-product-manager",
+										"vercel",
+										"app"
+									],
+									"path": [
+										"api",
+										"product",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

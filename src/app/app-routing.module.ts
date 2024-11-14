@@ -1,26 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { PrivateSiteComponent} from './pages/private-site/private-site.component';
 import { OrdenComponent } from './pages/orden/orden.component';
 import {  OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { AuthGuard } from '../core/services/auth.guard';
 import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }, 
-  {
-    path: 'privateSite',
-    component: PrivateSiteComponent,
-    // canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'createOrder',
-        component: OrdenComponent
-      }
-    ]
   },
   {
     path: 'navigatonLayout',
@@ -33,6 +22,10 @@ const routes: Routes = [
       {
         path: 'orderDetail',
         component: OrderDetailComponent
+      },
+      {
+        path: 'carrito',
+        component: CarritoComponent
       }
     ]
   },

@@ -3,17 +3,6 @@
         <h1>Bienvenido a Pickmemarket</h1>
         <p>Tu proveedor confiable de repuestos automotrices de alta calidad.</p>
     </header>
-     <!-- Buscador de órdenes -->
-     <div class="search-container">
-        <input 
-            type="text" 
-            placeholder="Buscar por número de orden" 
-            [(ngModel)]="orderNumber" 
-            (keydown.enter)="onSearch()" 
-            class="search-input"
-        />
-        <button (click)="onSearch()" class="search-button">Buscar</button>
-    </div>
     <section class="features">
         <div class="feature"> 
             <img src="assets/icons/quality.jpeg" alt="Calidad">
@@ -45,7 +34,7 @@
             />
             <button (click)="onSearch()" class="search-button">Buscar</button>
         </div>
-         <a routerLink="/navigatonLayout/createOrder" class="cta-button">Crear Orden</a> 
+         <a  (click)="goToCreateOrder()"  class="cta-button">Crear Orden</a> 
          <a (click)="openLoginModal()" class="cta-button">Iniciar Sesión</a>
         <app-login-modal *ngIf="isLoginModalOpen" (close)="closeLoginModal()"></app-login-modal> 
     </section>

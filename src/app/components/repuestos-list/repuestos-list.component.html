@@ -10,7 +10,18 @@
             <p><strong>Foto:</strong></p>
             <img [src]="repuesto.foto" alt="Foto del Repuesto" class="repuesto-img">
             <button *ngIf="!isViewMode" type="button" (click)="removeRepuesto(i)">Eliminar</button>
-            <button *ngIf="isViewMode" (click)="onVerOferta(repuesto)">Ver oferta</button>
+            <button *ngIf="isViewMode" (click)="(repuesto?.ofertas?.length ?? 0) > 0 ? onVerOferta(repuesto) : null"
+                [ngClass]="{
+                  'oferta-btn': (repuesto?.ofertas?.length ?? 0) > 0,
+                  'sin-oferta-btn': (repuesto?.ofertas?.length ?? 0) === 0
+                }">
+                {{ (repuesto?.ofertas?.length ?? 0) > 0 ? 'Ver oferta' : 'Sin oferta' }}
+            </button>
+
         </div>
+        <!-- Menú de ofertas: se muestra debajo del listado -->
+        <app-menu-oferta *ngIf="selectedRepuestoId === repuesto.idProducto" [ofertas]="repuesto.ofertas"
+            (volver)="cerrarOfertas()" class="menu-oferta-container">
+        </app-menu-oferta>
     </div>
 </div>
