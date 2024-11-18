@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { ApiResponse } from 'src/assets/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StoreService {
   private searchOrderResultsData = new BehaviorSubject<ApiResponse>({
@@ -16,12 +16,13 @@ export class StoreService {
       modelo: '',
       año: 2020,
       vin: '',
-      repuestos: []
-    }
+      repuestos: [],
+    },
   });
-  public carritoData = new BehaviorSubject<any[]>([]); 
 
-  set searchOrderResults (newState: ApiResponse) {
+  public carritoData = new BehaviorSubject<any[]>(this.getCarritoFromStorage()); // Inicializa con los datos de localStorage
+
+  set searchOrderResults(newState: ApiResponse) {
     this.searchOrderResultsData.next(newState);
   }
 
@@ -32,9 +33,21 @@ export class StoreService {
   // Manejo del estado del carrito
   set carrito(newCarrito: any[]) {
     this.carritoData.next(newCarrito);
+    this.saveCarritoToStorage(newCarrito); // Guarda el carrito en localStorage cada vez que se actualiza
   }
 
   get carrito() {
     return this.carritoData.getValue();
+  }
+
+  // Función para guardar el carrito en localStorage
+  private saveCarritoToStorage(carrito: any[]): void {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+
+  // Función para obtener el carrito de localStorage
+  private getCarritoFromStorage(): any[] {
+    const carrito = localStorage.getItem('carrito');
+    return carrito ? JSON.parse(carrito) : []; // Si no existe en localStorage, retorna un array vacío
   }
 }

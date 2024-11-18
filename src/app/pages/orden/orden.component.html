@@ -2,5 +2,10 @@
     <app-vehicle-info class="vehicle-info" (formSubmitted)="guardarInfoVehiculo($event)"></app-vehicle-info>
     <app-repuestos-form class="repuestos-form" [disableButtonSubmit]="disableButtonSubmit" (repuestoAdded)="onRepuestoAdded($event)" (enviarOrden)="enviarOrden()"></app-repuestos-form>
     <app-repuestos-list [listaRepuestos]="listaRepuestos" class="repuestos-list"></app-repuestos-list>
-  </div>
+    <app-order-success-modal 
+    [isVisible]="mostrarModal" 
+    [orderNumber]="ordenNumber" 
+    (onClose)="handleModalClose()">
+  </app-order-success-modal>
+    </div>
   

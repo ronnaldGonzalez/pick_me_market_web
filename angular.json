@@ -67,6 +67,14 @@
                   "with": "src/environments/environment.stubby.ts"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -82,6 +90,9 @@
             },
             "stubby": {
               "browserTarget": "angular-test:build:stubby"
+            },
+            "local": {
+              "browserTarget": "angular-test:build:local"
             }
           },
           "defaultConfiguration": "development"

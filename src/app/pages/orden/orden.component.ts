@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-orden',
   templateUrl: './orden.component.html',
@@ -8,9 +9,12 @@ import { ApiService } from '../../services/api.service';
 export class OrdenComponent {
   listaRepuestos: any[] = [];
   vehicleInfoData: any = {};
-  disableButtonSubmit= true;
+  disableButtonSubmit = true;
+  mostrarModal: boolean = false;
+  ordenNumber: string = '';
 
-  constructor( private apiService: ApiService ){}
+  constructor(private apiService: ApiService,
+    private router: Router) { }
 
   onRepuestoAdded(repuesto: any): void {
     this.listaRepuestos.push(repuesto); // Añade el nuevo repuesto a la lista
@@ -29,10 +33,14 @@ export class OrdenComponent {
       };
 
       // Llamar al servicio para enviar la orden
-      this.apiService.postData('orden',ordenCompleta).subscribe({
+      this.apiService.postData('api/orden', ordenCompleta).subscribe({
         next: (response: any) => {
           console.log('Orden enviada con éxito:', response);
-          
+          this.ordenNumber = response.data?.OrdenNumber;
+          this.mostrarModal = true;
+          // Mostrar el modal por 3 segundos y luego redirigir
+          setTimeout(() => this.handleModalClose(), 3000);
+
         },
         error: (err: any) => {
           console.error('Error al enviar la orden:', err);
@@ -44,5 +52,10 @@ export class OrdenComponent {
     } else {
       console.log('Falta información para enviar la orden.');
     }
+  }
+
+  handleModalClose() {
+    this.mostrarModal = false;
+    this.router.navigate(['/']); // Redirigir al home
   }
 }

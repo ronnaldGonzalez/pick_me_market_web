@@ -1,5 +1,7 @@
 {
   "status": "OK",
   "message": "Solicitud procesada correctamente.",
-  "data": {}
+  "data": {
+    "OrdenNumber": "123456789abc"
+  }
 }

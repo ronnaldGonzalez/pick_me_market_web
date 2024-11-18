@@ -7,7 +7,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "stubs": "stubby -d stubs/config.json -w",
-    "start:stubby": "concurrently \"stubby -d stubs/config.json -w\" \"ng serve --configuration=stubby\""
+    "start:stubby": "concurrently \"stubby -d stubs/config.json -w\" \"ng serve --configuration=stubby\"",
+    "start:local": "ng serve --configuration=local"
   },
   "dependencies": {
     "@angular/animations": "^15.0.0",

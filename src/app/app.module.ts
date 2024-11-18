@@ -18,6 +18,7 @@ import { OrderDetailComponent } from './pages/order-detail/order-detail.componen
 import { MenuOfertaComponent} from './components/menu-oferta/menu-oferta.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.component';
+import { OrderSuccessModalComponent } from './components/modals/order-success-modal/order-success-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.com
     OrderDetailComponent,
     MenuOfertaComponent,
     CarritoComponent,
-    CarritoIconComponent
+    CarritoIconComponent,
+    OrderSuccessModalComponent
   ],
   imports: [
     BrowserModule,
