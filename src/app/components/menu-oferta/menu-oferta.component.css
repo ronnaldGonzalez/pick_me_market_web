@@ -1,80 +1,60 @@
-/* Estilos para el componente app-menu-oferta */
 .menu-oferta-container {
-    display: block;
-    width: 100%; /* Para que ocupe el ancho completo del contenedor */
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.oferta-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.agregar-carro-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.agregar-carro-btn:hover {
+  background-color: #0056b3;
+}
+
+.volver-btn {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.volver-btn:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .menu-oferta-container {
+    padding: 10px;
   }
   
-  .oferta-card {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .oferta-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .agregar-carro-btn, .volver-btn {
     font-size: 0.9rem;
+    padding: 8px;
   }
-  
-  .oferta-info strong {
-    font-weight: bold;
-  }
-  
-  .agregar-carro-btn {
-    display: block;
-    width: 100%;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .agregar-carro-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .volver-btn {
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .volver-btn:hover {
-    background-color: #5a6268;
-  }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 768px) {
-    .menu-oferta-container {
-      padding: 0.5rem;
-    }
-  
-    .oferta-card {
-      padding: 0.5rem;
-    }
-  
-    .agregar-carro-btn, .volver-btn {
-      padding: 0.4rem;
-      font-size: 0.85rem;
-    }
-  }
-  
+}

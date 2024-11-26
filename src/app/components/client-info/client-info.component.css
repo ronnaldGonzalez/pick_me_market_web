@@ -1,21 +1,20 @@
-/* Estilo para la sección de información del vehículo */
-.vehicle-info {
+  .client-info-container {
     flex: 1;
     border-right: 2px solid #ddd;
     padding: 20px;
     background-color: #F0F0F0;
-    box-shadow: 0 0 10px rgba(252, 134, 134, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.vehicle-info label {
+.client-info-container label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #333;
 }
 
-.vehicle-info input,
-.vehicle-info select {
+.client-info-container input,
+.client-info-container select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -26,8 +25,8 @@
     background-color: white;
 }
 
-.vehicle-info input:focus,
-.vehicle-info select:focus {
+.client-info-container input:focus,
+.client-info-container select:focus {
     border-color: #007bff;
     outline: none;
 }

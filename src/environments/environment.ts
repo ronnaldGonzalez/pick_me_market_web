@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseUrl: 'urlnormal' // URL para desarrollo
+    baseUrl: 'https://pickme-users-manager.vercel.app'// URL para desarrollo
   };
