@@ -27,7 +27,7 @@
 
       <div class="buttons-container">
           <button type="button" (click)="agregarRepuesto()" [disabled]="repuestoForm.invalid">Añadir otro repuesto</button>
-          <button type="submit" class="submit-button"  id="submit-button" [disabled]="this.isSubmitButtonDisabled || this.disableButtonSubmit" >Enviar Orden</button>
+          <button type="submit" class="submit-button"  id="submit-button" [disabled]="isDisableSubmit" >Enviar Orden</button>
       </div>
   </form>
 </div>

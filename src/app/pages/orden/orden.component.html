@@ -1,7 +1,7 @@
 <div class="order-form-container">
-    <app-vehicle-info class="vehicle-info" (formSubmitted)="guardarInfoVehiculo($event)"></app-vehicle-info>
-    <app-repuestos-form class="repuestos-form" [disableButtonSubmit]="disableButtonSubmit" (repuestoAdded)="onRepuestoAdded($event)" (enviarOrden)="enviarOrden()"></app-repuestos-form>
-    <app-repuestos-list [listaRepuestos]="listaRepuestos" class="repuestos-list"></app-repuestos-list>
+    <app-vehicle-info class="vehicle-info"></app-vehicle-info>
+    <app-repuestos-form class="repuestos-form" (enviarOrden)="enviarOrden()"></app-repuestos-form>
+    <app-repuestos-list class="repuestos-list"></app-repuestos-list>
     <app-order-success-modal 
     [isVisible]="mostrarModal" 
     [orderNumber]="ordenNumber" 

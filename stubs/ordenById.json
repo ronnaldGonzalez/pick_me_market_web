@@ -1,16 +1,25 @@
 {
-    "status": "OK",
-    "message": "Solicitud procesada correctamente.",
+    "status": 200,
+    "message": "Orden encontrada.",
     "data": {
-        "idSolicitud": 1,
-        "patente": "btwc89",
-        "marca": "2",
-        "modelo": "Serie 6",
-        "año": 2020,
-        "vin": "123324243242433",
+        "cliente": {
+            "clienteId": 2,
+            "nombre": "Ronald gonzalez",
+            "correo_electronico": "ra@fa.cl",
+            "celular": "4444",
+            "region": "Tarapacá",
+            "comuna": "Alto Hospicio"
+        },
+        "vehiculo": {
+            "patente": "dkdk39",
+            "marca": "1",
+            "modelo": "A5",
+            "anio": 2020,
+            "vin": "123324243242437"
+        },
         "repuestos": [
             {
-                "idProducto": 1,
+                "repuestoId": 1,
                 "ofertas": [],
                 "categoria": "Motor y Transmisión",
                 "subcategoria": "Partes del Motor",
@@ -18,9 +27,14 @@
                 "foto": ""
             },
             {
+                "repuestoId": 2,
+                "categoria": "Motor y Transmisión",
+                "subcategoria": "Partes del Motor",
+                "nombreRepuesto": "efwefw",
+                "foto": "",
                 "ofertas": [
                     {
-                        "idOferta": 1,
+                        "ofertaId": 1,
                         "ofertante": "ofertante1",
                         "precio": 1234,
                         "tiempoEntrega": "2 dias",
@@ -28,19 +42,14 @@
                         "costoEnvio": 20000
                     },
                     {
-                        "idOferta": 2,
+                        "ofertaId": 2,
                         "ofertante": "ofertante2",
                         "precio": 5678,
                         "tiempoEntrega": "3 dias",
                         "comuna": "peñalolen",
                         "costoEnvio": 3000
                     }
-                ],
-                "idProducto": 2,
-                "categoria": "Motor y Transmisión",
-                "subcategoria": "Partes del Motor",
-                "nombreRepuesto": "efwefw",
-                "foto": ""
+                ]
             }
         ]
     }

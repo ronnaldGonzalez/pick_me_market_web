@@ -10,10 +10,10 @@ export class SearchHelper {
 
     async onSearch(orderNumber: any): Promise<ApiResponse> {
         try {
-            const response: ApiResponse = await this.apiService.getData('api/orden', { id: orderNumber }).toPromise();
+            const response: ApiResponse = await this.apiService.getData('api/product/v1/order', { OrdenNumber: orderNumber }).toPromise();
             return response;
         } catch (err) {
-            console.error('Error al enviar la orden:', err);
+            console.error('Error al recibir la orden:', err);
             throw err;
         }
     }

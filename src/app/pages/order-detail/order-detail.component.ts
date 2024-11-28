@@ -1,22 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StoreService } from '../../services/store.service';
-import { SolicitudData, Repuesto } from 'src/assets/interfaces';
+import {  Repuesto, Vehiculo } from 'src/assets/interfaces';
 
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
   styleUrls: ['./order-detail.component.css']
 })
-export class OrderDetailComponent implements OnInit  {
-  vehicleDataToShow: SolicitudData | undefined;
+export class OrderDetailComponent implements OnInit, OnDestroy  {
+  vehicleDataToShow: Vehiculo | undefined;
   listaRepuestos: Repuesto[] | undefined
 
-  constructor(private storeService: StoreService) {}
+  constructor(private store: StoreService) {}
 
   ngOnInit(): void {
-    const searchOrderResults  = this.storeService.searchOrderResults;
-    this.vehicleDataToShow= searchOrderResults.data;
-    this.listaRepuestos = this.vehicleDataToShow.repuestos;
+    const searchOrderResults  = this.store.searchOrderResults;
+    this.store.vehiculo = searchOrderResults.data.vehiculo;
+    this.store.repuestos = searchOrderResults.data.vehiculo.repuestos;
+    this.store.cliente = searchOrderResults.data.cliente;
+  }
+
+  ngOnDestroy(): void {
+    this.store.clearForms();
   }
 
 

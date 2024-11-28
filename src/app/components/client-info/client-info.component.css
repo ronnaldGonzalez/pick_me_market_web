@@ -30,3 +30,10 @@
     border-color: #007bff;
     outline: none;
 }
+
+.error-messages {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+  }
+  

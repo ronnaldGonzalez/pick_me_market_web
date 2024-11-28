@@ -23,7 +23,7 @@ export class OrderFormComponent implements OnInit {
       patente: ['', Validators.required],
       marca: ['', Validators.required],
       modelo: ['', Validators.required],
-      año: ['', Validators.required],
+      anio: ['', Validators.required],
       vin: ['', Validators.required],
       repuestoForm: this.fb.group({
         categoria: ['', Validators.required],

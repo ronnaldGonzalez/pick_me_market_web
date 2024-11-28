@@ -1,32 +1,47 @@
-import { Component, OnInit, EventEmitter, Output,Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import repuestosJson from '../../../assets/json/repuestos.json'; // JSON con las categorías y subcategorías
 import { Categoria, CategoriasResponse, Repuesto } from '../../../assets/interfaces';
-
+import { StoreService } from '../../services/store.service';
+import { combineLatest, Subscription } from 'rxjs';
 @Component({
   selector: 'app-repuestos-form',
   templateUrl: './repuestos-form.component.html',
   styleUrls: ['./repuestos-form.component.css']
 })
 export class RepuestosFormComponent implements OnInit {
-  repuestoForm!: FormGroup; // Asegúrate de que es el nombre correcto del FormGroup
+  repuestoForm!: FormGroup;
   categorias: Categoria[] = [];
   subcategorias: string[] = [];
   listaRepuestos: Repuesto[] = [];
-  isSubmitButtonDisabled: boolean = true;
-  @Output() repuestoAdded = new EventEmitter<Repuesto>();
+  isDisableSubmit: boolean = true;
+  private subscription!: Subscription;
+
   @Output() enviarOrden = new EventEmitter<any[]>();
-  @Input() disableButtonSubmit: boolean = false;
-  constructor(private fb: FormBuilder) {}
+
+  constructor(private fb: FormBuilder, private store: StoreService) {}
 
   ngOnInit(): void {
     this.cargarCategorias();
-    
+    this.validaciones();
     this.repuestoForm = this.fb.group({
       categoria: ['', Validators.required],
       subcategoria: ['', Validators.required],
       nombreRepuesto: ['', Validators.required],
       foto: ['']
+    });
+  }
+  validaciones(): void {
+    this.subscription = combineLatest([
+      this.store.clienteData$,
+      this.store.vehicleData$,
+      this.store.repuestosListData$
+    ]).subscribe(([cliente, vehiculo, repuestosList]) => {
+      if(Object.keys(cliente).length > 0 && Object.keys(vehiculo).length > 0 && repuestosList.length>0 ){
+        this.isDisableSubmit = false;
+      }else{
+        this.isDisableSubmit = true;
+      }
     });
   }
 
@@ -43,16 +58,9 @@ export class RepuestosFormComponent implements OnInit {
 
   agregarRepuesto() {
     if(this.repuestoForm.valid){
-      const nuevoRepuesto: Repuesto = {
-        categoria: this.repuestoForm.get('categoria')?.value,
-        subcategoria: this.repuestoForm.get('subcategoria')?.value,
-        nombreRepuesto: this.repuestoForm.get('nombreRepuesto')?.value,
-        foto: this.repuestoForm.get('foto')?.value
-      };
+      const nuevoRepuesto: Repuesto = this.repuestoForm.value;
       this.listaRepuestos.push(nuevoRepuesto);
-      this.repuestoAdded.emit(nuevoRepuesto); 
-      this.isSubmitButtonDisabled = false;
-      console.log('addrepuesto')
+      this.store.repuestos = this.listaRepuestos;
       this.repuestoForm.reset(); // Limpia el formulario
   
       const fileInput = document.getElementById('file') as HTMLInputElement;

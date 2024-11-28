@@ -1,52 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
+import { StoreService} from '../../services/store.service';
+import { combineLatest, Subscription } from 'rxjs';
 @Component({
   selector: 'app-orden',
   templateUrl: './orden.component.html',
   styleUrls: ['./orden.component.css']
 })
-export class OrdenComponent {
+export class OrdenComponent implements OnInit, OnDestroy {
+  private subscription!: Subscription;
   listaRepuestos: any[] = [];
   vehicleInfoData: any = {};
+  clientInfoData: any = {};
   disableButtonSubmit = true;
   mostrarModal: boolean = false;
   ordenNumber: string = '';
 
-  constructor(private apiService: ApiService,
-    private router: Router) { }
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private store: StoreService)
+     { }
 
-  onRepuestoAdded(repuesto: any): void {
-    this.listaRepuestos.push(repuesto); // Añade el nuevo repuesto a la lista
+  ngOnInit(): void {
+    this.subscription = combineLatest([
+      this.store.clienteData$,
+      this.store.vehicleData$,
+      this.store.repuestosListData$
+    ]).subscribe(([cliente, vehiculo, repuestosList]) => {
+      if(cliente && vehiculo && repuestosList ){
+        this.guardarFormlarios();
+      }
+    });
   }
 
-  guardarInfoVehiculo(data: any) {
-    this.vehicleInfoData = data; // Guardar la información de VehicleInfo
+
+  guardarFormlarios() {
+    this.clientInfoData = this.store.cliente;
+    this.vehicleInfoData = this.store.vehiculo;
+    this.listaRepuestos = this.store.repuestos
     this.disableButtonSubmit = false;
   }
 
   enviarOrden() {
     if (Object.keys(this.vehicleInfoData).length > 0 && this.listaRepuestos.length > 0) {
       const ordenCompleta = {
-        ...this.vehicleInfoData,
-        repuestos: this.listaRepuestos
+        cliente: this.clientInfoData,
+        vehiculo: {
+          ...this.vehicleInfoData,
+          repuestos: this.listaRepuestos
+        }
       };
+      
 
-      // Llamar al servicio para enviar la orden
-      this.apiService.postData('api/orden', ordenCompleta).subscribe({
+      this.apiService.postData('api/product/v1/order', ordenCompleta).subscribe({
         next: (response: any) => {
-          console.log('Orden enviada con éxito:', response);
           this.ordenNumber = response.data?.OrdenNumber;
           this.mostrarModal = true;
+
           // Mostrar el modal por 3 segundos y luego redirigir
           setTimeout(() => this.handleModalClose(), 3000);
-
         },
         error: (err: any) => {
           console.error('Error al enviar la orden:', err);
-        },
-        complete: () => {
-          console.log('Petición completada.');
         }
       });
     } else {
@@ -57,5 +74,13 @@ export class OrdenComponent {
   handleModalClose() {
     this.mostrarModal = false;
     this.router.navigate(['/']); // Redirigir al home
+  }
+
+  ngOnDestroy(): void {
+    // Desuscribir para evitar memory leaks
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+    this.store.clearForms();
   }
 }

@@ -1,4 +1,4 @@
-<app-client-info></app-client-info>
+<app-client-info [isEditMode]="isEditMode"></app-client-info>
 <form [formGroup]="vehicleForm">
   <div class="vehicle-info">
     <h2>Información del Vehículo</h2>
@@ -28,8 +28,8 @@
       <small style="color: red;">Modelo es obligatorio.</small>
     </div>
 
-    <label for="año">Año</label>
-    <input id="año" formControlName="año" type="number"  required>
+    <label for="anio">Año</label>
+    <input id="anio" formControlName="anio" type="number"  required>
     <div *ngIf="anio?.invalid && anio?.touched">
       <small style="color: red;">Año es obligatorio y debe ser un año válido (ejemplo: 1999).</small>
     </div>
