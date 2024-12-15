@@ -1,34 +1,54 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CustomerInfoComponent } from './customer-info/customer-info.component';
-import { OrderDetailsComponent } from './order-details/order-details.component';
-import { ProductOffersComponent } from './product-offers/product-offers.component';
-import { PaymentComponent } from './payment/payment.component';
-import { OrderValidationComponent } from './order-validation/order-validation.component';
-import { ProductControversyComponent } from './product-controversy/product-controversy.component';
-import { HomeComponent } from './home/home.component';
-
+import { HomeComponent } from './pages/home/home.component';
+import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PrivateSiteComponent } from './pages/private-site/private-site.component';
+import { VehicleInfoComponent } from './components/vehicle-info/vehicle-info.component';
+import { RepuestosFormComponent } from './components/repuestos-form/repuestos-form.component';
+import { RepuestosListComponent } from './components/repuestos-list/repuestos-list.component';
+import { OrdenComponent } from './pages/orden/orden.component';
+import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
+import { ApiService } from './services/api.service';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { MenuOfertaComponent} from './components/menu-oferta/menu-oferta.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.component';
+import { OrderSuccessModalComponent } from './components/modals/order-success-modal/order-success-modal.component';
+import { ClientInfoComponent } from './components/client-info/client-info.component';
+import { OrderStatusComponent } from './pages/order-status/order-status.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    CustomerInfoComponent,
-    OrderDetailsComponent,
-    ProductOffersComponent,
-    PaymentComponent,
-    OrderValidationComponent,
-    ProductControversyComponent,
-    HomeComponent
+    HomeComponent,
+    LoginModalComponent,
+    NavbarComponent,
+    PrivateSiteComponent,
+    VehicleInfoComponent,
+    RepuestosFormComponent,
+    RepuestosListComponent,
+    OrdenComponent,
+    NavigationLayoutComponentComponent,
+    OrderDetailComponent,
+    MenuOfertaComponent,
+    CarritoComponent,
+    CarritoIconComponent,
+    OrderSuccessModalComponent,
+    ClientInfoComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ ApiService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

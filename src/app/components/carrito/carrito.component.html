@@ -1,0 +1,37 @@
+<div class="carrito-container">
+    <header class="carrito-header">
+      <h2>Carrito de Compras</h2>
+      <button class="vaciar-btn" *ngIf="carrito.length > 0" (click)="vaciarCarrito()">Vaciar Carrito</button>
+    </header>
+  
+    <!-- Mostrar un mensaje si el carrito está vacío -->
+    <div *ngIf="carrito.length === 0" class="carrito-vacio">
+      <p>Tu carrito está vacío. ¡Agrega productos para continuar!</p>
+    </div>
+  
+    <!-- Lista de productos en el carrito -->
+    <div *ngIf="carrito.length > 0" class="carrito-lista">
+      <div *ngFor="let item of carrito" class="carrito-item">
+        <div class="item-info">
+          <h3>{{ item.ofertante }}</h3>
+          <p><strong>Precio:</strong> ${{ item.precio }}</p>
+          <p><strong>Tiempo de Entrega:</strong> {{ item.tiempoEntrega }}</p>
+          <p><strong>Comuna:</strong> {{ item.comuna }}</p>
+          <p><strong>Costo Envío:</strong> ${{ item.costoEnvio }}</p>
+        </div>
+        <button class="eliminar-btn" (click)="eliminarDelCarrito(item)">Eliminar</button>
+      </div>
+    </div>
+  
+    <!-- Resumen del pedido -->
+    <div *ngIf="carrito.length > 0" class="resumen-pedido">
+      <h3>Resumen del Pedido</h3>
+      <p><strong>Subtotal:</strong> ${{ calcularSubtotal() }}</p>
+      <p><strong>Envío:</strong> ${{ calcularCostoEnvio() }}</p>
+      <hr>
+      <p><strong>Total:</strong> ${{ calcularTotal() }}</p>
+      <!-- Botón Ir a Pagar -->
+      <button class="checkout-btn" [disabled]="carrito.length === 0" (click)="irAPagar()">Ir a Pagar</button>
+    </div>
+  </div>
+  

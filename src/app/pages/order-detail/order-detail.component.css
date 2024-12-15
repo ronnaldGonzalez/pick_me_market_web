@@ -1,0 +1,32 @@
+.order-form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.vehicle-info {
+    width: 40%;
+  }
+  
+  .repuestos-form {
+    width: 60%;
+  }
+.repuestos-list{
+    width: 60%;
+}
+
+.vehicle-info, .repuestos-form, .repuestos-list {
+    flex: 1;
+  margin: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .vehicle-info, .repuestos-form, .repuestos-list {
+      width: 100%;
+    }
+    .order-form-container{
+        flex-wrap: wrap;
+        display: contents;
+    }
+}

@@ -1,0 +1,112 @@
+.carrito-vacio {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .carrito-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .vaciar-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .vaciar-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .carrito-lista {
+    margin-bottom: 20px;
+  }
+  
+  .carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-info h3 {
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .eliminar-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .eliminar-btn:hover {
+    background-color: #e64a19;
+  }
+  
+  .resumen-pedido {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .resumen-pedido h3 {
+    margin-bottom: 15px;
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  .checkout-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .checkout-btn:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 600px) {
+    .carrito-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

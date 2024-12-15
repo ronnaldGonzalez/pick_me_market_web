@@ -1,0 +1,33 @@
+<div class="repuestos-form">
+  <h2>Agregar Repuesto</h2>
+  <form [formGroup]="repuestoForm" (ngSubmit)="onSubmit()">
+      <label for="categoria">Categoría</label>
+      <select id="categoria" formControlName="categoria" (change)="onCategoriaChange($event)" required>
+          <option value="">Selecciona categoría</option>
+          <option *ngFor="let cat of categorias" [value]="cat.Categoria">{{ cat.Categoria }}</option>
+      </select>
+      <div *ngIf="categoria?.invalid && categoria?.touched">
+          <small style="color: red;">Categoría es obligatoria.</small>
+      </div>
+
+      <label for="subcategoria">Subcategoría</label>
+      <select id="subcategoria" formControlName="subcategoria" required>
+          <option value="">Selecciona subcategoría</option>
+          <option *ngFor="let subcat of subcategorias" [value]="subcat">{{ subcat }}</option>
+      </select>
+      <div *ngIf="subcategoria?.invalid && subcategoria?.touched">
+          <small style="color: red;">Subcategoría es obligatoria.</small>
+      </div>
+
+      <label for="nombreRepuesto">Nombre del Repuesto</label>
+      <input formControlName="nombreRepuesto" id="nombreRepuesto" type="text" required>
+
+      <label for="foto">Foto</label>
+      <input id="file" type="file" (change)="onFileChange($event)">
+
+      <div class="buttons-container">
+          <button type="button" (click)="agregarRepuesto()" [disabled]="repuestoForm.invalid">Añadir otro repuesto</button>
+          <button type="submit" class="submit-button"  id="submit-button" [disabled]="isDisableSubmit" >Enviar Orden</button>
+      </div>
+  </form>
+</div>

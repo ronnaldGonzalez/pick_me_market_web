@@ -1,0 +1,18 @@
+
+
+<div class="ofertas-container" >
+    <div class="ofertas-menu">
+      <h3>Ofertas:</h3>
+      <ng-container *ngFor="let oferta of ofertas">
+        <div class="oferta-item">
+          <p>Ofertante: {{ oferta.ofertante }}</p>
+          <p>Precio: {{ oferta.precio | currency }}</p>
+          <p>Tiempo de entrega: {{ oferta.tiempoEntrega }}</p>
+          <p>Comuna / Región: {{ oferta.comuna }}</p>
+          <p>Costo de envío: {{ oferta.costoEnvio | currency }}</p>
+          <button class="agregar-carro-btn" (click)="agregarAlCarro(oferta)">Agregar al Carro</button>
+        </div>
+      </ng-container>
+      <button class="volver-btn" (click)="volver.emit()">Volver</button>
+    </div>
+  </div>

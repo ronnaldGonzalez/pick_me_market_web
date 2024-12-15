@@ -1,0 +1,56 @@
+{
+    "status": 200,
+    "message": "Orden encontrada.",
+    "data": {
+        "cliente": {
+            "clienteId": 2,
+            "nombre": "Ronald gonzalez",
+            "correo_electronico": "ra@fa.cl",
+            "celular": "4444",
+            "region": "Tarapacá",
+            "comuna": "Alto Hospicio"
+        },
+        "vehiculo": {
+            "patente": "dkdk39",
+            "marca": "1",
+            "modelo": "A5",
+            "anio": 2020,
+            "vin": "123324243242437"
+        },
+        "repuestos": [
+            {
+                "repuestoId": 1,
+                "ofertas": [],
+                "categoria": "Motor y Transmisión",
+                "subcategoria": "Partes del Motor",
+                "nombreRepuesto": "efwefw",
+                "foto": ""
+            },
+            {
+                "repuestoId": 2,
+                "categoria": "Motor y Transmisión",
+                "subcategoria": "Partes del Motor",
+                "nombreRepuesto": "efwefw",
+                "foto": "",
+                "ofertas": [
+                    {
+                        "ofertaId": 1,
+                        "ofertante": "ofertante1",
+                        "precio": 1234,
+                        "tiempoEntrega": "2 dias",
+                        "comuna": "macul",
+                        "costoEnvio": 20000
+                    },
+                    {
+                        "ofertaId": 2,
+                        "ofertante": "ofertante2",
+                        "precio": 5678,
+                        "tiempoEntrega": "3 dias",
+                        "comuna": "peñalolen",
+                        "costoEnvio": 3000
+                    }
+                ]
+            }
+        ]
+    }
+}

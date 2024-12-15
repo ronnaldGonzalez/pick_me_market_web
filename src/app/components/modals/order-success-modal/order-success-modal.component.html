@@ -1,0 +1,10 @@
+<div *ngIf="isVisible" class="modal-backdrop">
+    <div class="modal">
+      <h2>🎉 ¡Orden enviada con éxito! 🎉</h2>
+      <p>Tu número de orden es:</p>
+      <h3>{{ orderNumber }}</h3>
+      <p>Hemos enviado un correo con los detalles de tu orden.</p>
+      <p>¡Gracias por confiar en nosotros!</p>
+      <button (click)="closeModal()">Volver al inicio</button>
+    </div>
+  </div>

@@ -5,7 +5,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "stubs": "stubby -d stubs/config.json -w",
+    "start:stubby": "concurrently \"stubby -d stubs/config.json -w\" \"ng serve --configuration=stubby\"",
+    "start:local": "ng serve --configuration=local",
+    "start:dev": "ng serve --configuration=development" 
   },
   "dependencies": {
     "@angular/animations": "^15.0.0",
@@ -16,6 +20,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "font-awesome": "^4.7.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -25,6 +30,7 @@
     "@angular/cli": "~15.0.0",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "concurrently": "^9.0.1",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

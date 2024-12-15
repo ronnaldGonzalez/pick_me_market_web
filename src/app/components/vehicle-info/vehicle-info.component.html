@@ -1,0 +1,43 @@
+<app-client-info [isEditMode]="isEditMode"></app-client-info>
+<form [formGroup]="vehicleForm">
+  <div class="vehicle-info">
+    <h2>Información del Vehículo</h2>
+
+    <label for="patente">Patente</label>
+    <input id="patente" formControlName="patente" type="text"  required>
+    <div *ngIf="patente?.invalid && (patente?.touched || patente?.dirty)" class="error-messages">
+      <small *ngIf="patente?.errors?.['required']">La patente es obligatoria.</small>
+      <small *ngIf="patente?.errors?.['pattern']">Formato inválido. Debe ser "aaaa12" o "aa1212".</small>
+    </div>
+
+    <label for="marca">Marca</label>
+    <select id="marca" formControlName="marca"  (change)="onMarcaChange($event)">
+      <option value="">Selecciona marca</option>
+      <option *ngFor="let marca of marcas" [value]="marca.id">{{ marca.nombre }}</option>
+    </select>
+    <div *ngIf="marca?.invalid && marca?.touched">
+      <small style="color: red;">Marca es obligatoria.</small>
+    </div>
+
+    <label for="modelo">Modelo</label>
+    <select id="modelo" formControlName="modelo"  required>
+      <option value="">Selecciona modelo</option>
+      <option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</option>
+    </select>
+    <div *ngIf="modelo?.invalid && modelo?.touched">
+      <small style="color: red;">Modelo es obligatorio.</small>
+    </div>
+
+    <label for="anio">Año</label>
+    <input id="anio" formControlName="anio" type="number"  required>
+    <div *ngIf="anio?.invalid && anio?.touched">
+      <small style="color: red;">Año es obligatorio y debe ser un año válido (ejemplo: 1999).</small>
+    </div>
+
+    <label for="vin">VIN</label>
+    <input id="vin" formControlName="vin" type="text"  required>
+    <div *ngIf="vin?.invalid && vin?.touched">
+      <small style="color: red;">VIN es obligatorio y debe tener entre 15 y 17 caracteres alfanuméricos.</small>
+    </div>
+  </div>
+</form>

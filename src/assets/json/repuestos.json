@@ -1,0 +1,89 @@
+{
+    "Segmentación": [
+        {
+            "Categoria": "Motor y Transmisión",
+            "Sub categoria": [
+                "Partes del Motor",
+                "Sistema de Enfriamiento",
+                "Sistema de Escape",
+                "Transmisión"
+            ]
+        },
+        {
+            "Categoria": "Frenos y Suspención",
+            "Sub categoria": [
+                "Frenos",
+                "Suspención",
+                "Dirección"
+            ]
+        },
+        {
+            "Categoria": "Sistema Eléctrico",
+            "Sub categoria": [
+                "Bateria y Sistema de Carga",
+                "Iluminación",
+                "Sensores y Módulos Eléctronicos",
+                "Sistema de Arranque"
+            ]
+        },
+        {
+            "Categoria": "Carrocería y Exterior",
+            "Sub categoria": [
+                "Parabrisas y Ventanas",
+                "Espejos",
+                "Parachoques",
+                "Puertas y Cerraduras"
+            ]
+        },
+        {
+            "Categoria": "Interior del Vehículo",
+            "Sub categoria": [
+                "Asientos y Fundas",
+                "Tablero y Controles",
+                "Alfombras y Revestimientos",
+                "Consolas y Almacenamientos"
+            ]
+        },
+        {
+            "Categoria": "Sistema de Climatización",
+            "Sub categoria": [
+                "Aire Acondicionado",
+                "Calefacción",
+                "Ventilación"
+            ]
+        },
+        {
+            "Categoria": "Sistemas de Combustibles",
+            "Sub categoria": [
+                "Bomba de Combustible",
+                "Inyectores de Combustible",
+                "Filtros de Combustibles",
+                "Tanque de Combustible"
+            ]
+        },
+        {
+            "Categoria": "Accesorios y Personalización",
+            "Sub categoria": [
+                "Accesorios Exteriores",
+                "Accesorios Interiores",
+                "Equipamiento y Herramientas"
+            ]
+        },
+        {
+            "Categoria": "Neumaticos y llantas",
+            "Sub categoria": [
+                "Neumaticos",
+                "Rines y Llantas",
+                "Kits de Reparación y Neumaticos"
+            ]
+        },
+        {
+            "Categoria": "Otros Componentes",
+            "Sub categoria": [
+                "Mantenimiento y Servicios",
+                "Seguridad y Protección"
+            ]
+        }
+    ]
+}
+
