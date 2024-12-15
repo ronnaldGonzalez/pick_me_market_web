@@ -20,6 +20,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.component';
 import { OrderSuccessModalComponent } from './components/modals/order-success-modal/order-success-modal.component';
 import { ClientInfoComponent } from './components/client-info/client-info.component';
+import { OrderStatusComponent } from './pages/order-status/order-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { ClientInfoComponent } from './components/client-info/client-info.compon
     CarritoComponent,
     CarritoIconComponent,
     OrderSuccessModalComponent,
-    ClientInfoComponent
+    ClientInfoComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,

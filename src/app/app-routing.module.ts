@@ -6,11 +6,13 @@ import {  OrderDetailComponent } from './pages/order-detail/order-detail.compone
 import { AuthGuard } from '../core/services/auth.guard';
 import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { OrderStatusComponent } from './pages/order-status/order-status.component';
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
   },
+  { path: 'estadoSolicitud/:id', component: OrderStatusComponent },
   {
     path: 'navigatonLayout',
     component: NavigationLayoutComponentComponent,

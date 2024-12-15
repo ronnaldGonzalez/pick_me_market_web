@@ -35,3 +35,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# comandos para iniciar proyect
+start:stubby    iniciar el proyecto, solo con stubbys,el comando 
+                levanta tanto el dront end como el servidor de stubby
+start:local     inicia el proyecto, pero apuntando a los ms que deberian
+                estar levantados en local tambien
+start:dev       inicia elproyecto, apuntando al los servicios en ambiente de desarrollo
