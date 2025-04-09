@@ -21,6 +21,8 @@ import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.com
 import { OrderSuccessModalComponent } from './components/modals/order-success-modal/order-success-modal.component';
 import { ClientInfoComponent } from './components/client-info/client-info.component';
 import { OrderStatusComponent } from './pages/order-status/order-status.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { OrderStatusComponent } from './pages/order-status/order-status.componen
     CarritoIconComponent,
     OrderSuccessModalComponent,
     ClientInfoComponent,
-    OrderStatusComponent
+    OrderStatusComponent,
+    SpinnerComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

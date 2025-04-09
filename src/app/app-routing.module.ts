@@ -7,15 +7,26 @@ import { AuthGuard } from '../core/services/auth.guard';
 import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { OrderStatusComponent } from './pages/order-status/order-status.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
+    path: 'login',
+    component: LoginPageComponent
   },
-  { path: 'estadoSolicitud/:id', component: OrderStatusComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    // canActivate: [AuthGuard]
+  },
+  { 
+    path: 'estadoSolicitud/:id',
+    component: OrderStatusComponent,
+    // canActivate: [AuthGuard] 
+  },
   {
     path: 'navigatonLayout',
     component: NavigationLayoutComponentComponent,
+    // canActivate: [AuthGuard],
     children: [
       {
         path: 'createOrder',

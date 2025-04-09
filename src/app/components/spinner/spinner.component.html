@@ -1,0 +1,6 @@
+<div *ngIf="isLoading" class="spinner-container">
+    <div class="custom-spinner">
+        <img *ngIf="spinnerImage" [src]="spinnerImage" alt="Loading" class="spinner-image" />
+    </div>
+    <p>{{ loadingMessage }}</p>
+</div>

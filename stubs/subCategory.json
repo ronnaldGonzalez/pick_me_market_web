@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "message": "Subcategorias Encontradas",
+  "data": {
+    "subcategoria": [
+      {
+        "subcategoria": "SUBCAT1",
+        "subcategoriaId": 1
+      }
+    ]
+  }
+}

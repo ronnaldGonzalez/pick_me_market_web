@@ -18,19 +18,19 @@
     </div> -->
       <!-- Input para seleccionar la región -->
       <div>
-        <label for="region">Región:</label>
-        <select id="region" formControlName="region">
+        <label for="regionId">Región:</label>
+        <select id="regionId" formControlName="regionId">
           <option value="">Seleccione una región</option>
-          <option *ngFor="let region of regiones" [value]="region.NombreRegion">{{ region.NombreRegion }}</option>
+          <option *ngFor="let region of regiones" [value]="region.regionId">{{ region.NombreRegion }}</option>
         </select>
       </div>
   
       <!-- Input para seleccionar la comuna -->
       <div>
-        <label for="comuna">Comuna:</label>
-        <select  (blur)="onInputChange()" id="comuna" formControlName="comuna">
+        <label for="comunaId">Comuna:</label>
+        <select  (blur)="onInputChange()" id="comunaId" formControlName="comunaId">
           <option value="">Seleccione una comuna</option>
-          <option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</option>
+          <option *ngFor="let comuna of comunas" [value]="comuna.comunaId">{{ comuna.nombreComuna }}</option>
         </select>
       </div>
 

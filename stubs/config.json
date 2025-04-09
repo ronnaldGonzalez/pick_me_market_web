@@ -1,22 +1,47 @@
 [
   {
     "request": {
-      "url": "^/api/order",
+      "url": "^/api/product/v1/order",
       "method": "POST"
     },
     "response": {
       "status": 200,
-      "file": "./addOrden.json"
+      "file": "./addOrden.json",
+      "latency": 2000
     }
   },
   {
     "request": {
-      "url": "^/api/order",
+      "url": "^/api/product/v1/order",
       "method": "GET"
     },
     "response": {
       "status": 200,
-      "file": "./ordenById.json"
+      "file": "./ordenById.json",
+      "latency": 2000
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/product/v1/category",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "file": "./category.json",
+      "latency": 2000
+    }
+  },{
+
+    "request": {
+      "url": "^/api/product/v1/subcategory",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "file": "./subCategory.json",
+      "latency": 2000
     }
   }
+  
 ]

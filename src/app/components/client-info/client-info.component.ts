@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from '../../services/store.service';
 import regionesjson from '../../../assets/json/comunasRegiones.json';
-import { Region } from '../../../assets/interfaces/comunasRegiones.interface';
+import { Region , Comuna} from '../../../assets/interfaces/comunasRegiones.interface';
 @Component({
   selector: 'app-client-info',
   templateUrl: './client-info.component.html',
@@ -12,7 +12,7 @@ import { Region } from '../../../assets/interfaces/comunasRegiones.interface';
 export class ClientInfoComponent implements OnInit {
   regiones: Region[] = [];
   clientForm!: FormGroup;
-  comunas: string[] = [];
+  comunas: Comuna[] = [];
   @Input() isEditMode = true;
 
   constructor(private fb: FormBuilder, private store: StoreService) {
@@ -25,30 +25,35 @@ export class ClientInfoComponent implements OnInit {
       // direccion: [{ value: '', disabled: !this.isEditMode },Validators.required],
       correo_electronico: [{ value: '', disabled: !this.isEditMode }, [Validators.email]],
       celular: [{ value: '', disabled: !this.isEditMode }, Validators.required],
-      region: [{ value: '', disabled: !this.isEditMode }, Validators.required],
-      comuna: [{ value: '', disabled: !this.isEditMode }, Validators.required]
+      regionId: [{ value: '', disabled: !this.isEditMode }, Validators.required],
+      comunaId: [{ value: '', disabled: !this.isEditMode }, Validators.required]
     });
     this.regiones = regionesjson.regiones;
     if (!this.isEditMode) {
      
       const clienteData = this.store.cliente;
-      this.comunas = (this.regiones.find(region => region.NombreRegion == clienteData.region)?.comunas) || [];
+      this.comunas = (this.regiones.find(region => region.regionId == clienteData.regionId)?.comunas) || [];
+      console.log('this.comunas',this.comunas)
+      console.log('cliente data',clienteData)
+      // revisar por que no carga la comuna
       this.clientForm.patchValue(clienteData);
       this.clientForm.disable();  // Deshabilita los campos en modo de visualización
     } else {
       this.clientForm.enable();   // Habilita los campos en modo de edición
       
-      this.clientForm.get('region')?.valueChanges.subscribe((region: string) => {
+      this.clientForm.get('regionId')?.valueChanges.subscribe((region: number) => {
         this.updateComunas(region);
       });
     }
   }
 
-  updateComunas(regionName: string): void {
-    const region = this.regiones.find(r => r.NombreRegion === regionName);
+  updateComunas(regionName: number): void {
+    console.log('region',regionName)
+    const region = this.regiones.find(r => r.regionId === Number(regionName));
     if (region) {
       this.comunas = region.comunas;
-      this.clientForm.get('comuna')?.reset();
+      console.log('comunas',this.comunas)
+      this.clientForm.get('comunaId')?.reset();
     }
   }
 

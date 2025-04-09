@@ -37,8 +37,10 @@ export class NavbarComponent {
   async onSearch() {
     if (this.orderNumber) {
       try {
+        this.storeService.showLoading();
         const response: ApiResponse = await this.searchHelper.onSearch(this.orderNumber);
         if (response) {
+          this.storeService.hideLoading();
           this.storeService.searchOrderResults = response;
           this.router.navigate(['navigatonLayout', 'orderDetail'], { skipLocationChange: true });
         } else {

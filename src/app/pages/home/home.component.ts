@@ -35,9 +35,11 @@ export class HomeComponent {
   async onSearch() {
     if (this.orderNumber) {
       try {
+        this.storeService.showLoading();
         const response: ApiResponse = await this.searchHelper.onSearch(this.orderNumber);
         if (response) {
           this.storeService.searchOrderResults = response;
+          this.storeService.hideLoading();
           this.router.navigate(['navigatonLayout', 'orderDetail'], { skipLocationChange: true });
         } else {
           // TODO: Handle the error (display a message or show a modal)

@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "message": "Categorias Encontradas",
+  "data": {
+    "catogorias": [
+      {
+        "categoria": "CAT1",
+        "categoriaId": 1
+      }
+    ]
+  }
+}
