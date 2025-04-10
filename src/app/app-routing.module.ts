@@ -21,12 +21,12 @@ const routes: Routes = [
   { 
     path: 'estadoSolicitud/:id',
     component: OrderStatusComponent,
-    // canActivate: [AuthGuard] 
+    canActivate: [AuthGuard] 
   },
   {
     path: 'navigatonLayout',
     component: NavigationLayoutComponentComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'createOrder',
