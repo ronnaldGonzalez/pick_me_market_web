@@ -1,20 +1,16 @@
-<header class="navbar">
-    <div (click)="goToHome()" class="brand">Pickmemarket</div>
-    <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button>
-    <nav [class.active]="isMenuOpen" class="navbar-links">
-      <ul>
-        <li><a (click)="goToHome()" routerLinkActive="active">Inicio</a></li>
-        <li><a routerLink="/create-order" routerLinkActive="active">Crear Orden</a></li>
-        <li><a routerLink="/orders" routerLinkActive="active">Mis Órdenes</a></li>
-        <li><a routerLink="/profile" routerLinkActive="active">Perfil</a></li>
-        <li><a (click)="logout()">Logout</a></li>
-        <app-carrito-icon></app-carrito-icon>
-      </ul>
-    </nav>
-    <div class="search-container">
-      <form (submit)="onSearch()">
-        <input type="text" [(ngModel)]="orderNumber" placeholder="Número de Orden" name="orderNumber" required>
-        <button type="submit">Buscar</button>
-      </form>
-    </div>
-  </header>
+<header class="header">
+  <div class="left">
+      <button class="login-btn">
+          <img class="loginImg" src="assets/icons/login.png" alt="user" />
+      </button>
+  </div>
+  <div class="center">
+      <img src="assets/icons/logo.png" alt="PeakMeUp Logo" class="logo" />
+  </div>
+  <nav class="right">
+      <a class="menuLink" routerLink="/">Inicio</a>
+      <a class="menuLink" routerLink="/howItWorks">Cómo Funciona</a>
+      <a class="menuLink" routerLink="/servicios">Servicios</a>
+      <a class="menuLink" routerLink="/contacto">Contacto</a>
+  </nav>
+</header>

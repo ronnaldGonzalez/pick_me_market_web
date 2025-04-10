@@ -1,132 +1,57 @@
-header.navbar {
-  background-color: #1B98E0;
-  color: white;
-  padding: 1rem;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 100px;
 }
 
-.navbar .brand {
-  font-size: 1.5rem;
-  cursor: pointer;
-
-}
-
-.navbar .menu-toggle {
-  font-size: 1.5rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: none;
-}
-
-.navbar-links ul {
-  list-style: none;
+.header .left, .header .center, .header .right {
   display: flex;
+  align-items: center;
 }
 
-.navbar-links ul li {
-  margin-left: 20px;
+.logo {
+  height: 70px;
 }
 
-.navbar-links ul li a {
-  color: white;
+.login-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav a {
+  font-size: 20px;
+  margin: 0 15px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #2b2b2b;
+  position: relative;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
 }
 
-.navbar-links ul li a.active {
-  background-color: #555;
-  border-radius: 5px;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #1992d4; /* azul del diseño */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-  }
+nav a:hover::after,
+nav a.active::after {
+  transform: scaleX(1);
+}
 
-  .navbar-links.active {
-    display: flex;
-  }
 
-  .navbar .menu-toggle {
-    display: block;
-  }
-
-  .navbar-links ul {
-    flex-direction: column;
-  }
-
-  .navbar-links ul li {
-    margin: 10px 0;
-  }
-
-  /* Estilo general para el contenedor de búsqueda */
-  .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .search-container form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .search-container input {
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 80%;
-    margin-right: 10px;
-  }
-
-  .search-container button {
-    padding: 8px 12px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .search-container button:hover {
-    background-color: #45a049;
-  }
-
-  @media (max-width: 768px) {
-    .navbar {
-      display: block;
-      padding: 10px;
-    }
-
-    .search-container {
-      margin-top: 10px;
-      width: 100%;
-      padding: 0 10px;
-    }
-
-    .search-container input {
-      width: 100%;
-      margin-right: 0;
-    }
-
-    .search-container button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
-
+.loginImg {
+  width: 100px;
 }

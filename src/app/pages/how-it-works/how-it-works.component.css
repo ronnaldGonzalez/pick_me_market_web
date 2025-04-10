@@ -1,0 +1,14 @@
+.main-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  
+  .banner-image {
+    width: 90%;               /* Cambia de 100% a un porcentaje menor */
+    display: block;
+    margin: 0 auto;           /* Centra horizontalmente */
+    border-radius: 15px;
+  }

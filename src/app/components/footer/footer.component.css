@@ -1,0 +1,95 @@
+.footer {
+    background-color: #a3a6a9;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.footer-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #1992d4;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #1992d4;
+    padding: 10px;
+}
+
+.icon-item span {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-bottom img {
+    height: 80px;
+}
+
+.footer-location {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #1992d4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle img {
+    width: 50px;
+    /* tamaño cuadrado */
+    height: 50px;
+    object-fit: contain;
+    border-radius: 0;
+    /* la imagen queda cuadrada */
+}

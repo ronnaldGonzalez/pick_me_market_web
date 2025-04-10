@@ -23,6 +23,10 @@ import { ClientInfoComponent } from './components/client-info/client-info.compon
 import { OrderStatusComponent } from './pages/order-status/order-status.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HowItWorksComponent } from './pages/how-it-works/how-it-works.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarFormComponent } from './components/sidebar-form/sidebar-form.component';
+import { ClientInformationFormComponent } from './pages/client-information-form/client-information-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     ClientInfoComponent,
     OrderStatusComponent,
     SpinnerComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    HowItWorksComponent,
+    FooterComponent,
+    SidebarFormComponent,
+    ClientInformationFormComponent
   ],
   imports: [
     BrowserModule,
