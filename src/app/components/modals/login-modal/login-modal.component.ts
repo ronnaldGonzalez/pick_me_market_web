@@ -25,7 +25,7 @@ export class LoginModalComponent {
 
   onLogin() {
     if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/privateSite']); // Redirige tras el login 
+      this.router.navigate(['']); // Redirige tras el login 
     } else { 
       this.loginError = 'Clave o usuario incorrectos'; 
   }

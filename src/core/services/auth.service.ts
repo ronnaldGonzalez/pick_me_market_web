@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 export class AuthService {
     private isLoggedIn: boolean = false;
     login(username: string, password: string): boolean {
-        // TO DO hacer logica de validacion
-        if (username === 'usuario' && password === 'contraseña') { 
+        // TO DO hacer logica de validacio
+        if (username === 'usuarioGenerico' && password === 'contraseñaGenerica') { 
             this.isLoggedIn = true; 
             return true; }
         return false;

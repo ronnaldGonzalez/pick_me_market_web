@@ -27,12 +27,22 @@ export class StoreService {
   private vehicleData = new BehaviorSubject<any>({ });
   public carritoData = new BehaviorSubject<any[]>(this.getCarritoFromStorage()); // Inicializa con los datos de localStorage
   private repuestosListData = new BehaviorSubject<any>([]);
+  private loadingSubject = new BehaviorSubject<boolean>(false);
 
   // observables
   clienteData$ = this.clienteData.asObservable();
   vehicleData$ = this.vehicleData.asObservable();
   repuestosListData$ = this.repuestosListData.asObservable();
+  loading$ = this.loadingSubject.asObservable();
 
+  // estado loading
+  showLoading() {
+    this.loadingSubject.next(true);
+  }
+
+  hideLoading() {
+    this.loadingSubject.next(false);
+  }
   // Getters y setters para repuestos
   get repuestos() {
     return this.repuestosListData.getValue();

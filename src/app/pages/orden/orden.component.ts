@@ -17,6 +17,7 @@ export class OrdenComponent implements OnInit, OnDestroy {
   mostrarModal: boolean = false;
   ordenNumber: string = '';
 
+
   constructor(
     private apiService: ApiService,
     private router: Router,
@@ -44,6 +45,8 @@ export class OrdenComponent implements OnInit, OnDestroy {
   }
 
   enviarOrden() {
+    console.log('enviando orden')
+    this.store.showLoading();
     if (Object.keys(this.vehicleInfoData).length > 0 && this.listaRepuestos.length > 0) {
       const ordenCompleta = {
         cliente: this.clientInfoData,
@@ -58,15 +61,18 @@ export class OrdenComponent implements OnInit, OnDestroy {
         next: (response: any) => {
           this.ordenNumber = response.data?.OrdenNumber;
           this.mostrarModal = true;
+          this.store.hideLoading();
 
           // Mostrar el modal por 3 segundos y luego redirigir
           setTimeout(() => this.handleModalClose(), 3000);
         },
         error: (err: any) => {
+          this.store.hideLoading();
           console.error('Error al enviar la orden:', err);
         }
       });
     } else {
+      this.store.hideLoading();
       console.log('Falta información para enviar la orden.');
     }
   }

@@ -7,8 +7,8 @@
             "nombre": "Ronald gonzalez",
             "correo_electronico": "ra@fa.cl",
             "celular": "4444",
-            "region": "Tarapacá",
-            "comuna": "Alto Hospicio"
+            "region": 15,
+            "comuna": 295
         },
         "vehiculo": {
             "patente": "dkdk39",

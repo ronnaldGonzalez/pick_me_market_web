@@ -1,6 +1,12 @@
 export interface Region {
+    regionId: number
     NombreRegion: string;
-    comunas: string[];
+    comunas: Comuna[];
+}
+
+export interface Comuna { 
+    comunaId: number; 
+    nombreComuna: string; 
 }
 
 export interface RegionesData {

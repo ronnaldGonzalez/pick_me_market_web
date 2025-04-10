@@ -11,9 +11,8 @@ import { ApiResponse } from 'src/assets/interfaces';
 })
 export class OrderStatusComponent implements OnInit {
 
-  isLoading = true;
-  spinnerImage = 'assets/icons/fast.png'; 
-  loadingMessage = 'Procesando tu solicitud...';
+  // isLoading = true;
+ 
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +23,7 @@ export class OrderStatusComponent implements OnInit {
 
   ngOnInit(): void {
     // Obtener el ID de la URL
+    this.storeService.showLoading();
     this.route.paramMap.subscribe(params => {
       const orderNumber = params.get('id') || '';
       this.getOrderDetails(orderNumber);
@@ -41,6 +41,7 @@ export class OrderStatusComponent implements OnInit {
       try {
         const response: ApiResponse = await this.searchHelper.onSearch(orderNumber);
         if (response) {
+          this.storeService.hideLoading();
           this.storeService.searchOrderResults = response;
           this.router.navigate(['navigatonLayout', 'orderDetail'], { skipLocationChange: true });
         } else {
