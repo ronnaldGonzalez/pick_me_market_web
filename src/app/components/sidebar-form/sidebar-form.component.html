@@ -1,27 +1,6 @@
 <div class="sidebar">
-    <div class="logo">
-      <img src="assets/icons/logo-blue.png" alt="Logo" />
-    </div>
-  
-    <div class="progress-steps">
-      <div class="step">
-        <div class="circle active"></div>
-        <span class="label active">CLIENTE</span>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="step">
-        <div class="circle"></div>
-        <span class="label">VEHICULO</span>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="step">
-        <div class="circle"></div>
-        <span class="label">REPUESTOS</span>
-      </div>
-    </div>
-  
-    <div class="worker-img">
-      <img src="assets/images/img-sidebar-form.png" alt="Trabajador" />
-    </div>
+  <img *ngIf="currentStep=='client'" src="assets/images/clientSideForm.png" alt="Nueva Sección" class="asideImage" />
+  <img *ngIf="currentStep=='car'" src="assets/images/carSideForm.png" alt="Nueva Sección" class="asideImage" />
+  <img *ngIf="currentStep=='sparePart'" src="assets/images/sparePartSideForm.png" alt="Nueva Sección" class="asideImage" />
   </div>
   

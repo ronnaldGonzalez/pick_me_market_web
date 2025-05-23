@@ -1,7 +1,8 @@
-<app-client-info [isEditMode]="isEditMode"></app-client-info>
-<form [formGroup]="vehicleForm">
+
+<form [formGroup]="vehicleForm" (ngSubmit)="saveCarInfo()">
   <div class="vehicle-info">
-    <h2>Información del Vehículo</h2>
+    
+  <h1 class="tittle">Información del Vehículo <img src="assets/icons/car.png" class="icon-rigth" alt="Icono"></h1>
 
     <label for="patente">Patente</label>
     <input id="patente" formControlName="patente" type="text"  required>
@@ -29,15 +30,16 @@
     </div>
 
     <label for="anio">Año</label>
-    <input id="anio" formControlName="anio" type="number"  required>
+    <input id="anio" formControlName="anio" type="text"  required>
     <div *ngIf="anio?.invalid && anio?.touched">
       <small style="color: red;">Año es obligatorio y debe ser un año válido (ejemplo: 1999).</small>
     </div>
 
     <label for="vin">VIN</label>
-    <input id="vin" formControlName="vin" type="text"  required>
+    <input id="vin" formControlName="vin" type="text" maxlength="17" (input)="onVinInput($event)" required/>
     <div *ngIf="vin?.invalid && vin?.touched">
       <small style="color: red;">VIN es obligatorio y debe tener entre 15 y 17 caracteres alfanuméricos.</small>
     </div>
   </div>
+  <button *ngIf="isEditMode" type="submit" class="boton-azul">Siguente</button>
 </form>

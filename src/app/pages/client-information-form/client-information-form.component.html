@@ -1,11 +1,12 @@
 <app-navbar></app-navbar>
 <div class="form-wrapper">
-    <div class="sidebar-container">
-      <app-sidebar-form></app-sidebar-form>
-    </div>
-  
-    <div class="form-container">
-      <!-- Aquí va tu formulario -->
-    </div>
+  <div class="sidebar-container">
+    <app-sidebar-form [currentStep]="'client'"></app-sidebar-form>
   </div>
-  <app-footer></app-footer>
+
+  <div class="form-container">
+    <app-how-need></app-how-need>
+    <app-client-info></app-client-info>
+  </div>
+</div>
+<app-footer></app-footer>

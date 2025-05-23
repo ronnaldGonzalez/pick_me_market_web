@@ -1,0 +1,33 @@
+.form-wrapper {
+    display: flex;
+    margin: 0 5%;
+  }
+  
+  .sidebar-container {
+    width: 30%;
+  }
+  
+  .form-container {
+    width: 50%;
+    background-color: #f4f4f4;
+  }
+
+  .list-container {
+    width: 20%;
+    background-color: #f4f4f4;
+  }
+
+  .boton-azul {
+    background-color: #1992d4;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: underline
+}
+  

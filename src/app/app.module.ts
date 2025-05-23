@@ -9,12 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PrivateSiteComponent } from './pages/private-site/private-site.component';
 import { VehicleInfoComponent } from './components/vehicle-info/vehicle-info.component';
-import { RepuestosFormComponent } from './components/repuestos-form/repuestos-form.component';
-import { RepuestosListComponent } from './components/repuestos-list/repuestos-list.component';
-import { OrdenComponent } from './pages/orden/orden.component';
-import { NavigationLayoutComponentComponent } from './pages/navigation-layout-component/navigation-layout-component.component';
+import { SparePartFormComponent } from './components/spare-part-form/spare-part-form.component';
+import { SparePartListComponent } from './components/spare-part-list/spare-part-list.component';
 import { ApiService } from './services/api.service';
-import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { MenuOfertaComponent} from './components/menu-oferta/menu-oferta.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { CarritoIconComponent } from './components/carrito-icon/carrito-icon.component';
@@ -23,10 +20,14 @@ import { ClientInfoComponent } from './components/client-info/client-info.compon
 import { OrderStatusComponent } from './pages/order-status/order-status.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { HowItWorksComponent } from './pages/how-it-works/how-it-works.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarFormComponent } from './components/sidebar-form/sidebar-form.component';
 import { ClientInformationFormComponent } from './pages/client-information-form/client-information-form.component';
+import { CarInformationFormComponent } from './pages/car-information-form/car-information-form.component';
+import { SparePartInformationFormComponent } from './pages/spare-part-information-form/spare-part-information-form.component';
+import { ClientOrderDetailComponent } from './pages/client-order-detail/client-order-detail.component';
+import { OfferUploadComponent } from './pages/offer-upload/offer-upload.component';
+import { HowNeedComponent } from './components/how-need/how-need.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,11 +36,8 @@ import { ClientInformationFormComponent } from './pages/client-information-form/
     NavbarComponent,
     PrivateSiteComponent,
     VehicleInfoComponent,
-    RepuestosFormComponent,
-    RepuestosListComponent,
-    OrdenComponent,
-    NavigationLayoutComponentComponent,
-    OrderDetailComponent,
+    SparePartFormComponent,
+    SparePartListComponent,
     MenuOfertaComponent,
     CarritoComponent,
     CarritoIconComponent,
@@ -48,10 +46,14 @@ import { ClientInformationFormComponent } from './pages/client-information-form/
     OrderStatusComponent,
     SpinnerComponent,
     LoginPageComponent,
-    HowItWorksComponent,
     FooterComponent,
     SidebarFormComponent,
-    ClientInformationFormComponent
+    ClientInformationFormComponent,
+    CarInformationFormComponent,
+    SparePartInformationFormComponent,
+    ClientOrderDetailComponent,
+    OfferUploadComponent,
+    HowNeedComponent
   ],
   imports: [
     BrowserModule,

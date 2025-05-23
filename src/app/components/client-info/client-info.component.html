@@ -1,25 +1,18 @@
 <div class="client-info-container">
-  <h3>Información del Cliente</h3>
-  <form [formGroup]="clientForm">
+  <h1 class="tittle">Información del Cliente <img src="assets/icons/client.png" class="icon-rigth" alt="Icono"></h1>
+  <form [formGroup]="clientForm" (ngSubmit)="saveClienteInfo()">
     <div>
       <label for="nombre">Nombre:</label>
-      <input id="nombre" formControlName="nombre" type="text" placeholder="Nombre completo" required (blur)="onInputChange()">
+      <input id="nombre" formControlName="nombre" type="text" placeholder="Nombre completo" required >
       <div *ngIf="nombre?.invalid && (nombre?.touched || nombre?.dirty)" class="error-messages">
         <small *ngIf="nombre?.errors?.['required']">El nombre es obligatorio.</small>
       </div>
     </div>
 
-    <!-- <div>
-      <label for="direccion">Dirección:</label>
-      <input id="direccion" formControlName="direccion" type="text" placeholder="Dirección completa" (blur)="onInputChange()">
-      <div *ngIf="direccion?.invalid && (direccion?.touched || direccion?.dirty)" class="error-messages">
-        <small *ngIf="direccion?.errors?.['required']">La dirección es obligatoria.</small>
-      </div>
-    </div> -->
       <!-- Input para seleccionar la región -->
       <div>
         <label for="regionId">Región:</label>
-        <select id="regionId" formControlName="regionId">
+        <select id="regionId" formControlName="regionId" (change)="onRegionChange($event)">
           <option value="">Seleccione una región</option>
           <option *ngFor="let region of regiones" [value]="region.regionId">{{ region.NombreRegion }}</option>
         </select>
@@ -28,7 +21,7 @@
       <!-- Input para seleccionar la comuna -->
       <div>
         <label for="comunaId">Comuna:</label>
-        <select  (blur)="onInputChange()" id="comunaId" formControlName="comunaId">
+        <select   id="comunaId" formControlName="comunaId">
           <option value="">Seleccione una comuna</option>
           <option *ngFor="let comuna of comunas" [value]="comuna.comunaId">{{ comuna.nombreComuna }}</option>
         </select>
@@ -36,7 +29,7 @@
 
     <div>
       <label for="correo_electronico">Correo Electrónico:</label>
-      <input id="correo_electronico" formControlName="correo_electronico" type="email" placeholder="ejemplo@correo.com" (blur)="onInputChange()">
+      <input id="correo_electronico" formControlName="correo_electronico" type="email" placeholder="ejemplo@correo.com" >
       <div *ngIf="correo_electronico?.invalid && (correo_electronico?.touched || correo_electronico?.dirty)" class="error-messages">
         <small *ngIf="correo_electronico?.errors?.['email']">Correo electrónico inválido.</small>
       </div>
@@ -44,10 +37,11 @@
 
     <div>
       <label for="celular">Celular:</label>
-      <input id="celular" formControlName="celular" type="tel" placeholder="Número de celular" (blur)="onInputChange()">
+      <input id="celular" formControlName="celular" type="tel" placeholder="Número de celular" >
       <div *ngIf="celular?.invalid && (celular?.touched || celular?.dirty)" class="error-messages">
         <small *ngIf="celular?.errors?.['required']">El número de celular es obligatorio.</small>
       </div>
     </div>
+    <button *ngIf="isEditMode" type="submit" class="boton-azul">Siguente</button>
   </form>
 </div>

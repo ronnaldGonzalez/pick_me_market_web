@@ -1,0 +1,14 @@
+.info-wrapper {
+    display: flex;
+    justify-content: space-between; /* o center/start según prefieras */
+    gap: 20px;                      /* Espacio entre los componentes */
+    padding: 20px;
+    flex-wrap: wrap;               /* Para que en pantallas pequeñas bajen de línea */
+  }
+  
+  .info-wrapper > * {
+    flex: 1;                        /* Cada componente ocupa el mismo ancho */
+    min-width: 300px;               /* Para evitar que se hagan muy pequeños */
+    max-width: 33%;                 /* Si quieres que se limiten al 33% */
+  }
+  

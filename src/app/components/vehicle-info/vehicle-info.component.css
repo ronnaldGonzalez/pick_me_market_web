@@ -31,3 +31,36 @@
     border-color: #007bff;
     outline: none;
 }
+
+.tittle {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background-color: #FF6C37;
+    padding-left: 16px;
+    justify-content: space-between;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.icon-rigth {
+    width: 60px;
+    height: auto;
+}
+
+.boton-azul {
+    background-color: #1992d4;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: underline
+}
