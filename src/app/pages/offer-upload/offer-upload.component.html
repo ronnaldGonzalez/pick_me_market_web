@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="left-panel">
+      <app-vehicle-info  [isEditMode]="false"></app-vehicle-info> 
+    </div>
+  
+    <div class="right-panel">
+      <div *ngFor="let repuesto of repuestos;let i = index" class="repuesto-item">
+      <h3>Repuesto Solicitado:{{repuesto.repuestoId}}</h3>
+      <p>
+        Categoría: {{repuesto.categoria}} | 
+        <span class="subcategoria">Subcategoría:</span> {{repuesto.subcategoria}} <br />
+        Detalle: {{repuesto.nombreRepuesto}} | Cantidad: 1 |
+        <span class="ubicacion">Ubicación:</span> {{clientInformation.region}}, {{clientInformation.comuna}} | 
+        Imagen: <a href="#">Ver</a>
+      </p>
+  
+      <form [formGroup]="ofertaForms[i]" (ngSubmit)="onSubmit(ofertaForms[i], repuesto)">
+        <div class="form-row">
+          <label>Cantidad</label>
+          <input type="number" formControlName="cantidad" />
+      
+          <label>Valor Total</label>
+          <input type="number" formControlName="valorTotal" />
+      
+          <label>Disponibilidad:</label>
+          <select formControlName="disponibilidad">
+            <option value="Inmediata">Inmediata</option>
+            <option value="Exportación">Exportación</option>
+          </select>
+        </div>
+      
+        <div class="form-row">
+          <label>Costo de Envío:</label>
+          <input type="number" formControlName="costoEnvio" />
+        </div>
+      
+        <button class="btn-ofertar" type="submit">Ofertar</button>
+      </form>
+  
+    </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  

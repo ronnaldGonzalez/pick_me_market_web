@@ -1,0 +1,15 @@
+.form-wrapper {
+    display: flex;
+    margin: 0 5%;
+  }
+  
+  .sidebar-container {
+    width: 40%;
+  }
+  
+  .form-container {
+    width: 60%;
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  

@@ -1,8 +1,17 @@
-import { SolicitudData } from './solicitud.interface';
+import { Cliente } from "./client.interface";
+import { Vehiculo } from "./vehiculo.interface";
 
 export interface ApiResponse {
-    status: string;
-    message: string;
-    data: SolicitudData;
-  }
-  
+  OrderId?: number;
+  proveedor_id?: number;
+  status: number;
+  message: string;
+  data: {
+    cliente: Cliente;
+    vehiculo: Vehiculo;
+  };
+}
+
+
+
+

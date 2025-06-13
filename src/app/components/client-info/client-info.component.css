@@ -1,39 +1,68 @@
   .client-info-container {
-    flex: 1;
-    border-right: 2px solid #ddd;
-    padding: 20px;
-    background-color: #F0F0F0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.client-info-container label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-.client-info-container input,
-.client-info-container select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    background-color: white;
-}
-
-.client-info-container input:focus,
-.client-info-container select:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.error-messages {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 0.3em;
+      flex: 1;
+      border-right: 2px solid #ddd;
+      padding: 20px;
+      background-color: #F0F0F0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .client-info-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+  }
+
+  .client-info-container input,
+  .client-info-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+      background-color: white;
+  }
+
+  .client-info-container input:focus,
+  .client-info-container select:focus {
+      border-color: #007bff;
+      outline: none;
+  }
+
+  .error-messages {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 0.3em;
+  }
+
+
+
+  .boton-azul {
+      background-color: #1992d4;
+      color: black;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      float: right;
+      margin-top: 10px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: underline
+  }
+
+  .tittle {
+      display: flex;
+      align-items: center;
+      height: 65px;
+      background-color: #FF6C37;
+      padding-left: 16px;
+      justify-content: space-between;
+  }
+
+  .icon-rigth {
+      width: 60px;
+      height: auto;
+  }

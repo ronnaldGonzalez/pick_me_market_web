@@ -43,3 +43,36 @@ start:stubby    iniciar el proyecto, solo con stubbys,el comando
 start:local     inicia el proyecto, pero apuntando a los ms que deberian
                 estar levantados en local tambien
 start:dev       inicia elproyecto, apuntando al los servicios en ambiente de desarrollo
+
+
+# request para crear orden
+{
+    "cliente": {
+        "nombre": "Ronald gonzalez",
+        "correo_electronico": "ra@fa.cl",
+        "celular": "4444",
+        "regionId": "1",
+        "comunaId": "1"
+    },
+    "vehiculo": {
+        "patente": "dkdk39",
+        "marca": "1",
+        "modelo": "Q2",
+        "anio": 2020,
+        "vin": "aaaaaappppp1234m",
+        "repuestos": [ // puede ser mas de 1repuesto
+            {
+                "categoria": "Motor y Transmisión",
+                "subcategoria": "Partes del Motor",
+                "nombreRepuesto": "correa de distribucion",
+                "foto": ""
+            }
+        ]
+    }
+}
+
+
+# http://localhost:4200/estadoSolicitud/128 funcion para buscar una solicitud como cliente
+# http://localhost:4200/creacionOferta/128 funcion para buscar una solicitud como proveedor
+
+celular es con +56956400785

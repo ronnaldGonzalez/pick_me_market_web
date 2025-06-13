@@ -1,41 +1,36 @@
-<div class="home-container">
-    <header>
-        <h1>Bienvenido a Pickmemarket</h1>
-        <p>Tu proveedor confiable de repuestos automotrices de alta calidad.</p>
-    </header>
-    <section class="features">
-        <div class="feature"> 
-            <img src="assets/icons/quality.jpeg" alt="Calidad">
-            <h2>Calidad Garantizada</h2>
-            <p>Repuestos originales y certificados para asegurar el mejor rendimiento de tu vehículo.</p>
-        </div>
-        <div class="feature"> 
-            <img src="assets/icons/fast.png" alt="Entrega Rápida">
-            <h2>Entrega Rápida</h2>
-            <p>Recibe tus repuestos en tiempo récord con nuestro servicio de entrega eficiente.</p>
-        </div>
-        <div class="feature"> 
-            <img src="assets/icons/support.png" alt="Soporte Técnico">
-            <h2>Soporte Técnico</h2>
-            <p>Asistencia experta para ayudarte a encontrar el repuesto adecuado para tu vehículo.</p>
-        </div>
-    </section>
-    <section class="cta">
-        <h2>¿Listo para comprar?</h2>
-        <p>Explora nuestro catálogo y encuentra lo que necesitas para tu vehículo.</p>
-         <!-- Buscador de órdenes -->
-         <div class="search-container">
-            <input 
-                type="text" 
-                placeholder="Buscar por número de orden" 
-                [(ngModel)]="orderNumber" 
-                (keydown.enter)="onSearch()" 
-                class="search-input"
-            />
-            <button (click)="onSearch()" class="search-button">Buscar</button>
-        </div>
-         <a  (click)="goToCreateOrder()"  class="cta-button">Crear Orden</a> 
-         <a (click)="openLoginModal()" class="cta-button">Iniciar Sesión</a>
-        <app-login-modal *ngIf="isLoginModalOpen" (close)="closeLoginModal()"></app-login-modal> 
-    </section>
-</div>
+<app-navbar></app-navbar>
+<section class="main-banner">
+    <img src="assets/images/imgLanding.png" alt="Landing" class="banner-image" />
+    <button class="cta-btn">Cómo Funciona</button>
+</section>
+
+<section class="search-box">
+    <div class="field">
+        <label>Categoria</label>
+        <input type="text" placeholder="Frenos, motor, transmisión..." />
+    </div>
+    <div class="field">
+        <label>Marca</label>
+        <input type="text" placeholder="Selecciona la marca" />
+    </div>
+    <div class="field">
+        <label>Modelo</label>
+        <input type="text" placeholder="Selecciona el modelo" />
+    </div>
+    <button (click)="goToClientForm()" class="search-btn">Buscamos tu repuesto</button>
+</section>
+
+
+<section class="main-banner">
+    <img src="assets/images/viajeDelCliente.png" alt="Nueva Sección" class="banner-image" />
+</section>
+<section class="main-banner">
+    <img src="assets/images/porQueCotizarAca.png" alt="Nueva Sección" class="banner-image" />
+</section>
+<section class="main-banner" id="howToWork">
+    <img src="assets/images/howItWork.png" alt="Nueva Sección" class="banner-image" />
+</section>
+<section class="main-banner">
+    <img src="assets/images/proveedores.png" alt="Nueva Sección" class="banner-image" />
+</section>
+<app-footer></app-footer>

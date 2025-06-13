@@ -1,0 +1,95 @@
+.repuestos-list {
+    margin-top: 20px;
+    height: 539px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .repuesto-item {
+    border: 1px solid #ddd;
+  }
+  
+  .repuesto-info {
+    margin-bottom: 15px;
+  }
+  
+  .repuesto-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .repuesto-img {
+    width: 80px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .menu-oferta-wrapper {
+    width: 100%; /* Ocupa todo el ancho del repuesto-item */
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Botón con oferta */
+.oferta-btn {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .oferta-btn:hover {
+    background-color: #45a049; /* Verde más oscuro en hover */
+  }
+  
+  /* Botón sin oferta */
+  .sin-oferta-btn {
+    background-color: #6c757d; /* Gris */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: not-allowed; /* Indicador de que no es clicable */
+    opacity: 0.6;
+  }
+  
+  .sin-oferta-btn:hover {
+    background-color: #5a6268; /* Gris más oscuro en hover */
+  }
+
+  .tittle {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background-color: #1992d4;
+    padding-left: 16px;
+    justify-content: space-between;
+    color: white;
+    font-size: xx-large;
+
+}

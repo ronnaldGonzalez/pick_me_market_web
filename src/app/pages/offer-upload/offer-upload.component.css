@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  .left-panel {
+    width: 30%;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .right-panel {
+    width: 70%;
+    padding: 20px;
+    background-color: #eee;
+    border-left: 1px solid #ccc;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  .input-bold {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .form-row input, .form-row select {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .info-box {
+    border: 1px solid #666;
+    border-radius: 10px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-ofertar {
+    background-color: orange;
+    border: none;
+    padding: 10px 30px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .subcategoria, .ubicacion {
+    color: red;
+  }
+  

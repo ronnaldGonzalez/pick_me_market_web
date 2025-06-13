@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="form-wrapper">
+  <div class="sidebar-container">
+    <app-sidebar-form [currentStep]="'sparePart'"></app-sidebar-form>
+  </div>
+
+  <div class="form-container">
+    <app-how-need></app-how-need>
+    <app-spare-part-form></app-spare-part-form>
+  </div>
+  <div class="list-container">
+    <app-spare-part-list></app-spare-part-list>
+    <button class="boton-azul" (click)="submitOrder()">Enviar Orden</button>
+  </div>
+  <app-order-success-modal 
+    [isVisible]="mostrarModal" 
+    [orderNumber]="ordenNumber" 
+    (onClose)="handleModalClose()">
+  </app-order-success-modal>
+
+</div>
+
+<app-footer></app-footer>
