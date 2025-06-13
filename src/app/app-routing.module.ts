@@ -35,7 +35,7 @@ const routes: Routes = [
   { 
     path: 'estadoSolicitud/:id',
     component: OrderStatusComponent,
-    // canActivate: [AuthGuard] 
+    canActivate: [AuthGuard] 
   },
   { 
     path: 'clientOrderDetail',

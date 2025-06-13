@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class LoginPageComponent {
 
+  isLoginModalOpen: boolean = true;
+  openLoginModal() {
+    this.isLoginModalOpen = true;
+  }
+  closeLoginModal() {
+    this.isLoginModalOpen = false;
+  }
+
 }

@@ -1,1 +1,6 @@
-<app-login-modal></app-login-modal>
+
+<app-login-modal *ngIf="isLoginModalOpen" (close)="closeLoginModal()"></app-login-modal> 
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <!-- tu formulario acá -->
+  </div>
